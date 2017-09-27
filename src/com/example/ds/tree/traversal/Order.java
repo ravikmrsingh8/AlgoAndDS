@@ -3,8 +3,11 @@ package com.example.ds.tree.traversal;
 
 public enum Order {
     PRE_ORDER,
+    ITERATIVE_PRE_ORDER,
     IN_ORDER,
+    ITERATIVE_IN_ORDER,
     POST_ORDER,
+    ITERATIVE_POST_ORDER,
     LEVEL_ORDER,
     LEVEL_ORDER_LINE_BY_LINE,
     LEVEL_ORDER_LINE_BY_LINE_2_QUEUES,

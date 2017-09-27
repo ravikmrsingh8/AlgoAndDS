@@ -33,60 +33,112 @@ public class Tree {
     }
 
     public void traverse(Order order) {
-        if (order == Order.PRE_ORDER) {
-            preOrder(root);
-        } else if (order == Order.IN_ORDER) {
-            inOrder(root);
-        } else if (order == Order.POST_ORDER) {
-            postOrder(root);
-        } else if (order == Order.LEVEL_ORDER) {
-            levelOrder();
-        } else if (order == Order.ZIG_ZAG_ORDER) {
-            zigZagOrder();
-        } else if (order == Order.LEVEL_ORDER_LINE_BY_LINE) {
-            levelOrderLineByLine();
-        } else if (order == Order.LEVEL_ORDER_LINE_BY_LINE_2_QUEUES) {
-            levelOrderLineByLineUsingQueues();
-        } else if (order == Order.REVERSE_LEVEL_ORDER) {
-            reverseLevelOrder();
-        } else if (order == Order.VERTICAL_ORDER) {
-            verticalOrder();
-        } else if (order == Order.LEFT_VIEW) {
-            leftView();
-        } else if (order == Order.RIGHT_VIEW) {
-            rightView();
-        } else if (order == Order.TOP_VIEW) {
-            topView();
-        } else if(order == Order.BOTTOM_VIEW) {
-            bottomView();
-        } else if(order == Order.BOUNDARY) {
-            boundaryTraversal();
+        switch (order) {
+            case IN_ORDER:inOrder(root);break;
+            case ITERATIVE_IN_ORDER:iterativeInOrder();break;
+            case PRE_ORDER:preOrder(root);break;
+            case ITERATIVE_PRE_ORDER:iterativePreOrder();break;
+            case POST_ORDER:postOrder(root);break;
+            case ITERATIVE_POST_ORDER:iterativePostOrder();break;
+            case LEVEL_ORDER:levelOrder();break;
+            case LEVEL_ORDER_LINE_BY_LINE:levelOrderLineByLine();break;
+            case LEVEL_ORDER_LINE_BY_LINE_2_QUEUES:levelOrderLineByLineUsingQueues();break;
+            case REVERSE_LEVEL_ORDER:reverseLevelOrder();break;
+            case ZIG_ZAG_ORDER:zigZagOrder();break;
+            case LEFT_VIEW:leftView();break;
+            case RIGHT_VIEW:rightView();break;
+            case TOP_VIEW:topView();break;
+            case BOTTOM_VIEW:bottomView();break;
+            case VERTICAL_ORDER:verticalOrder();break;
+            case BOUNDARY:boundaryTraversal();break;
         }
     }
 
-    private void reverseLevelOrder() {
+    private void inOrder(Node node) {
+        if (node == null) return;
+        inOrder(node.getLeft());
+        System.out.print(node + "\t");
+        inOrder(node.getRight());
+    }
+    private void iterativeInOrder() {
         if (root == null) return;
-        Stack<Node> nodes = new Stack<>();
+    }
+
+    private void preOrder(Node node) {
+        if (node == null) return;
+        System.out.print(node + "\t");
+        preOrder(node.getLeft());
+        preOrder(node.getRight());
+    }
+
+    private void iterativePreOrder() {
+        if (root == null) return;
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.isEmpty()) {
+            Node node = stack.pop();
+            System.out.print(node+"\t");
+            if(node.getRight() != null) {
+                stack.push(node.getRight());
+            }
+            if(node.getLeft() != null) {
+                stack.push(node.getLeft());
+            }
+        }
+    }
+
+    private void postOrder(Node node) {
+        if (node == null) return;
+        postOrder(node.getLeft());
+        postOrder(node.getRight());
+        System.out.print(node + "\t");
+    }
+
+    private void iterativePostOrder() {
+        if (root == null) return;
+    }
+    private void levelOrder() {
+        if (root == null) return;
         Queue<Node> queue = new LinkedList<>();
         queue.offer(root);
-        nodes.push(root);
+
         while (!queue.isEmpty()) {
             Node node = queue.poll();
-            if (node.getRight() != null) {
-                queue.offer(node.getRight());
-                nodes.push(node.getRight());
-
-            }
+            System.out.print(node + "\t");
             if (node.getLeft() != null) {
                 queue.offer(node.getLeft());
-                nodes.push(node.getLeft());
             }
-        }
-        while (!nodes.isEmpty()) {
-            System.out.print(nodes.pop() + "\t");
+            if (node.getRight() != null) {
+                queue.offer(node.getRight());
+            }
         }
     }
 
+    private void levelOrderLineByLine() {
+        System.out.println();
+        if (root == null) return;
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.offer(root);
+        queue.offer(null);
+
+        while (!queue.isEmpty()) {
+            Node node = queue.poll();
+            if (node == null) {
+                System.out.println();
+                if (!queue.isEmpty()) {
+                    queue.offer(null);
+                }
+            } else {
+                System.out.print(node + "\t");
+                if (node.getLeft() != null) {
+                    queue.offer(node.getLeft());
+                }
+                if (node.getRight() != null) {
+                    queue.offer(node.getRight());
+                }
+            }
+        }
+    }
     private void levelOrderLineByLineUsingQueues() {
         System.out.println();
         if (root == null) return;
@@ -119,43 +171,28 @@ public class Tree {
         }
     }
 
-    private void inOrder(Node node) {
-        if (node == null) return;
-        inOrder(node.getLeft());
-        System.out.print(node + "\t");
-        inOrder(node.getRight());
-    }
 
-    private void preOrder(Node node) {
-        if (node == null) return;
-        System.out.print(node + "\t");
-        preOrder(node.getLeft());
-        preOrder(node.getRight());
-    }
-
-    private void postOrder(Node node) {
-        if (node == null) return;
-        postOrder(node.getLeft());
-        postOrder(node.getRight());
-        System.out.print(node + "\t");
-    }
-
-    private void levelOrder() {
+    private void reverseLevelOrder() {
         if (root == null) return;
+        Stack<Node> nodes = new Stack<>();
         Queue<Node> queue = new LinkedList<>();
         queue.offer(root);
-
         while (!queue.isEmpty()) {
             Node node = queue.poll();
-            System.out.print(node + "\t");
-            if (node.getLeft() != null) {
-                queue.offer(node.getLeft());
-            }
+            nodes.push(node);
             if (node.getRight() != null) {
                 queue.offer(node.getRight());
             }
+            if (node.getLeft() != null) {
+                queue.offer(node.getLeft());
+            }
+        }
+        while (!nodes.isEmpty()) {
+            System.out.print(nodes.pop() + "\t");
         }
     }
+
+
 
     private void zigZagOrder() {
         if (root == null) return;
@@ -185,54 +222,6 @@ public class Tree {
                 }
             }
         }
-    }
-
-    private void levelOrderLineByLine() {
-        System.out.println();
-        if (root == null) return;
-        Queue<Node> queue = new LinkedList<Node>();
-        queue.offer(root);
-        queue.offer(null);
-
-        while (!queue.isEmpty()) {
-            Node node = queue.poll();
-            if (node == null) {
-                System.out.println();
-                if (!queue.isEmpty()) {
-                    queue.offer(null);
-                }
-            } else {
-                System.out.print(node + "\t");
-                if (node.getLeft() != null) {
-                    queue.offer(node.getLeft());
-                }
-                if (node.getRight() != null) {
-                    queue.offer(node.getRight());
-                }
-            }
-        }
-    }
-
-    private void verticalOrder() {
-        System.out.println();
-        if (root == null) return;
-        TreeMap<Integer, List<Node>> map = new TreeMap<>();
-        verticalOrder(map, root, 0);
-        map.forEach((key, value) -> {
-            System.out.println(key + ":\t" + value);
-        });
-    }
-
-    private void verticalOrder(TreeMap<Integer, List<Node>> map, Node node, int level) {
-        if (node == null) return;
-        List<Node> nodes = map.get(level);
-        if (nodes == null) {
-            nodes = new ArrayList<>();
-        }
-        nodes.add(node);
-        map.put(level, nodes);
-        verticalOrder(map, node.getLeft(), level - 1);
-        verticalOrder(map, node.getRight(), level + 1);
     }
 
     private void leftView() {
@@ -281,34 +270,113 @@ public class Tree {
                 }
             }
         }
-
     }
 
     private void topView() {
         if (root == null) return;
-        printLeft(root);
-        printRight(root.getRight());
+        Map<Integer, Node> map = new TreeMap<>();
+
+        Queue<XNode> queue = new LinkedList<>();
+        XNode xRoot = new XNode(root);
+        queue.offer(xRoot);
+        while(!queue.isEmpty()) {
+            XNode xNode = queue.poll();
+            map.putIfAbsent(xNode.getX(), xNode.getNode());
+            if(xNode.getNode().getLeft() != null) {
+                queue.offer(new XNode(xNode.getNode().getLeft(),xNode.getX()-1));
+            }
+            if(xNode.getNode().getRight() != null) {
+                queue.offer(new XNode(xNode.getNode().getRight(), xNode.getX()+1));
+            }
+        }
+        map.forEach((key, value) -> {
+            System.out.print(value + "\t");
+        });
     }
 
+    private void bottomView() {
+        if (root == null) return;
+        Map<Integer, Node> map = new TreeMap<>();
 
-    private void printLeft(Node node) {
-        if(node == null) return;
-        printLeft(node.getLeft());
-        System.out.print(node+"\t");
+        Queue<XNode> queue = new LinkedList<>();
+        XNode xRoot = new XNode(root);
+        queue.offer(xRoot);
+        while(!queue.isEmpty()) {
+            XNode xNode = queue.poll();
+            map.put(xNode.getX(), xNode.getNode());
+            if(xNode.getNode().getLeft() != null) {
+                queue.offer(new XNode(xNode.getNode().getLeft(),xNode.getX()-1));
+            }
+            if(xNode.getNode().getRight() != null) {
+                queue.offer(new XNode(xNode.getNode().getRight(), xNode.getX()+1));
+            }
+        }
+
+        map.forEach((key, value) -> {
+            System.out.print(value + "\t");
+        });
     }
 
-    private void printRight(Node node) {
-        if(node == null) return;
-        System.out.print(node+"\t");
-        printRight(node.getRight());
+    private void verticalOrder() {
+        System.out.println();
+        if (root == null) return;
+        TreeMap<Integer, List<Node>> map = new TreeMap<>();
+        verticalOrder(map, root, 0);
+        map.forEach((key, value) -> {
+            System.out.println(key + ":\t" + value);
+        });
     }
 
-    private void bottomView(){
-
+    private void verticalOrder(TreeMap<Integer, List<Node>> map, Node node, int x) {
+        if (node == null) return;
+        List<Node> nodes = map.get(x);
+        if (nodes == null) {
+            nodes = new ArrayList<>();
+        }
+        nodes.add(node);
+        map.put(x, nodes);
+        verticalOrder(map, node.getLeft(), x - 1);
+        verticalOrder(map, node.getRight(), x + 1);
     }
+
 
     private void boundaryTraversal() {
+        if (root == null) return;
+        System.out.print(root + "\t");
+        printLeftBoundary(root.getLeft());
+        printLeaf(root);
+        printRightBoundary(root.getRight());
+    }
+
+    private void printLeftBoundary(Node node) {
+        if (node == null) return;
+        if (node.getLeft() != null) {
+            System.out.print(node + "\t");
+            printLeftBoundary(node.getLeft());
+        } else if (node.getRight() != null) {
+            System.out.print(node + "\t");
+            printLeftBoundary(node.getRight());
+        }
+    }
+
+    private void printRightBoundary(Node node) {
+        if (node == null) return;
+        if (node.getRight() != null) {
+            printRightBoundary(node.getRight());
+            System.out.print(node + "\t");
+        } else if (node.getLeft() != null) {
+            printRightBoundary(node.getLeft());
+            System.out.print(node + "\t");
+        }
 
     }
 
+    private void printLeaf(Node node) {
+        if (node == null) return;
+        printLeaf(node.getLeft());
+        if (node.getRight() == null && node.getLeft() == null) {
+            System.out.print(node + "\t");
+        }
+        printLeaf(node.getRight());
+    }
 }
