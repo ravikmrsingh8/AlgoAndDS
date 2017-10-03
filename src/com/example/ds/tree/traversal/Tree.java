@@ -62,6 +62,23 @@ public class Tree {
     }
     private void iterativeInOrder() {
         if (root == null) return;
+        Stack<Node> stack = new Stack<>();
+        Node node = root;
+        while(node != null) {
+            stack.push(node);
+            node = node.getLeft();
+        }
+        while(!stack.isEmpty()) {
+            Node node1 = stack.pop();
+            System.out.print(node1+"\t");
+            if(node1.getRight() != null) {
+                Node node2 = node1.getRight();
+                while(node2 != null) {
+                    stack.push(node2);
+                    node2 = node2.getLeft();
+                }
+            }
+        }
     }
 
     private void preOrder(Node node) {
@@ -343,13 +360,17 @@ public class Tree {
     private void boundaryTraversal() {
         if (root == null) return;
         System.out.print(root + "\t");
-        printLeftBoundary(root.getLeft());
+        if(root.getLeft() != null) {
+            printLeftBoundary(root.getLeft());
+        }
         printLeaf(root);
-        printRightBoundary(root.getRight());
+        if(root.getRight() != null) {
+            printRightBoundary(root.getRight());
+        }
+
     }
 
     private void printLeftBoundary(Node node) {
-        if (node == null) return;
         if (node.getLeft() != null) {
             System.out.print(node + "\t");
             printLeftBoundary(node.getLeft());
@@ -360,7 +381,6 @@ public class Tree {
     }
 
     private void printRightBoundary(Node node) {
-        if (node == null) return;
         if (node.getRight() != null) {
             printRightBoundary(node.getRight());
             System.out.print(node + "\t");
@@ -368,7 +388,6 @@ public class Tree {
             printRightBoundary(node.getLeft());
             System.out.print(node + "\t");
         }
-
     }
 
     private void printLeaf(Node node) {
