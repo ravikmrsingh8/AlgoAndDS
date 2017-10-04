@@ -36,9 +36,10 @@ public class CloneTree {
         if(root == null) return null;
         Node leftNode = clone(root.left);
         Node rightNode = clone(root.right);
-        if(leftNode != null) root.left = new Node(leftNode);
-        if(rightNode != null)root.right = new Node(rightNode);
-        return new Node(root);
+        Node newRoot = new Node(root);
+        if(leftNode != null) newRoot.left = leftNode;
+        if(rightNode != null)newRoot.right = rightNode;
+        return newRoot;
     }
 
     private static Node cloneUsingQueue(Node root) {

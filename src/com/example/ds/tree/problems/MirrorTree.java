@@ -1,4 +1,8 @@
 package com.example.ds.tree.problems;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /*=================================================
        45                                  45
      /    \                              /    \
@@ -31,21 +35,60 @@ public class MirrorTree {
         System.out.println("\nTree2");
         Utility.levelOrderLineByLine(root2);
 
-        System.out.println("Tree2 Mirror Of Tree1: " + isMirror(root1,root2));
+        System.out.println("Tree2 Mirror Of Tree1: " + isMirror(root1, root2));
 
         Node mirrorRoot = mirror(root1);
-        System.out.println("\nMirror Tree");
+        System.out.println("\nCloned Mirror of Tree1");
         Utility.levelOrderLineByLine(mirrorRoot);
+
+
+        System.out.println("\nTree1");
+        Utility.levelOrderLineByLine(root1);
+        convertToMirror(root1);
+        System.out.println("Tree1 Converted to its Mirror:");
+        Utility.levelOrderLineByLine(root1);
+
+
     }
 
     private static boolean isMirror(Node root1, Node root2) {
-        if(root1 == null && root2 == null ) return true;
-        else if(root1 == null) return false;
-        else if(root2 == null) return false;
-        else return root1.data == root2.data && isMirror(root1.left,root2.right) && isMirror(root1.right,root2.left);
+        if (root1 == null && root2 == null) return true;
+        else if (root1 == null) return false;
+        else if (root2 == null) return false;
+        else return root1.data == root2.data && isMirror(root1.left, root2.right) && isMirror(root1.right, root2.left);
     }
+
     private static Node mirror(Node root) {
-        return null;
+        Map<Node, Node> map = new HashMap<>();
+        preOrder(root, map);
+        createLinks(root, map);
+        return map.get(root);
     }
+
+    private static void preOrder(Node root, Map<Node, Node> map) {
+        if (root == null) return;
+        map.put(root, new Node(root));
+        preOrder(root.left, map);
+        preOrder(root.right, map);
+    }
+
+    private static void createLinks(Node root, Map<Node, Node> map) {
+        if (root == null) return;
+        Node root1 = map.get(root);
+        root1.left = map.get(root.right);
+        root1.right = map.get(root.left);
+        createLinks(root.left, map);
+        createLinks(root.right, map);
+    }
+
+    private static void convertToMirror(Node root) {
+        if (root == null) return;
+        Node t = root.left;
+        root.left = root.right;
+        root.right = t;
+        convertToMirror(root.left);
+        convertToMirror(root.right);
+    }
+
 
 }
