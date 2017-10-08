@@ -41,6 +41,10 @@ public class MirrorTree {
         System.out.println("\nCloned Mirror of Tree1");
         Utility.levelOrderLineByLine(mirrorRoot);
 
+        mirrorRoot = createMirrorTreeRec(root1);
+        System.out.println("\nCloned Mirror of Tree1(Rec)");
+        Utility.levelOrderLineByLine(mirrorRoot);
+
 
         System.out.println("\nTree1");
         Utility.levelOrderLineByLine(root1);
@@ -90,5 +94,14 @@ public class MirrorTree {
         convertToMirror(root.right);
     }
 
+    private static Node createMirrorTreeRec(Node root){
+        if(root == null) return null;
+        Node leftNode = createMirrorTreeRec(root.left);
+        Node rightNode = createMirrorTreeRec(root.right);
+        Node rootNode = new Node(root);
+        rootNode.left = rightNode;
+        rootNode.right = leftNode;
+        return rootNode;
+    }
 
 }

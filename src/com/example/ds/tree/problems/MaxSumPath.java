@@ -1,5 +1,6 @@
 package com.example.ds.tree.problems;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /*===========================================
@@ -11,6 +12,7 @@ import java.util.List;
 
 =============================================*/
 public class MaxSumPath {
+    private static int maxSum = Integer.MIN_VALUE;
     public static void main(String[] args) {
         Node root = new Node(45);
         root.left = new Node(35);
@@ -24,32 +26,48 @@ public class MaxSumPath {
         System.out.println("\nMaximum sum in Path :"+sum);
 
         List<Node> maxSumPath = maxSumPath(root);
-        System.out.println("nMax Sum Path :"+ maxSumPath);
+        System.out.println("Max Sum Path :"+ maxSumPath);
     }
 
-    private static List<Node> maxSumPath(Node root) {
-        //TODO
-        return null;
-    }
 
+    //Solution1
     private static int maxSum(Node root) {
-        WrapInt max = new WrapInt(0);
-        maxSum(root,0, max);
-        return max.value;
+        maxSum(root,0);
+        return maxSum;
     }
 
-    private static void maxSum(Node root, int sum, WrapInt max) {
+    private static void maxSum(Node root, int sum) {
         if (root == null) return;
         sum += root.data;
-        if(sum > max.value) max.value = sum;
-        maxSum(root.left, sum, max);
-        maxSum(root.right, sum, max);
+        if(sum > maxSum) maxSum = sum;
+        maxSum(root.left, sum);
+        maxSum(root.right, sum);
     }
 
-    static class WrapInt{
-        int value;
-        WrapInt(int value) {
-            this.value = value;
+
+    //Solution1
+    private static LinkedList<Node> path = new LinkedList<>();
+    private static LinkedList<Node> maxSumPath = new LinkedList<>();
+    private static List<Node> maxSumPath(Node root) {
+        maxSum = Integer.MIN_VALUE;
+        maxSumPath(root,Integer.MIN_VALUE);
+        return maxSumPath;
+    }
+    private static void maxSumPath(Node root, int sum) {
+        if(root == null) return;
+        sum += root.data;
+        path.add(root);
+
+        if(root.left == null && root.right == null && sum > maxSum) {
+            updatePath();
+            maxSum = sum;
         }
+        maxSumPath(root.left, sum);
+        maxSumPath(root.right, sum);
+        path.pollLast();
+    }
+    private static void updatePath(){
+        maxSumPath.clear();
+        path.forEach((node)-> maxSumPath.add(node));
     }
 }
