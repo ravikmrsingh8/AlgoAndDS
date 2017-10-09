@@ -16,16 +16,17 @@ package com.example.ds.graph.traversal;
 ==========================================================*/
 
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Graph {
     private final int numVertex;
     private int numEdge;
     private ArrayList<ArrayList<Integer>> adjList;
+    private boolean[] visited;
     public Graph(InputStream is) {
         Scanner in = new Scanner(is);
         this.numVertex = in.nextInt();
+
         adjList = new ArrayList<>();
         for(int i=0; i<numVertex; i++) {
             adjList.add(new ArrayList<>());
@@ -34,6 +35,7 @@ public class Graph {
         for (int i=0;i<edges; i++) {
             addEdge(in.nextInt(), in.nextInt());
         }
+        this.visited = new boolean[numVertex];
     }
 
     public void addEdge(int v, int w) {
@@ -42,6 +44,46 @@ public class Graph {
     }
     public Iterable<Integer> getAdjacentList(int v) {
         return adjList.get(v);
+    }
+
+
+    public void dfs() {
+        Arrays.fill(visited, false);
+        for(int i=0; i<numVertex;i++) {
+            if(!visited[i]){
+                dfs(i);
+            }
+        }
+    }
+    private void dfs(int i){
+        System.out.print(i+"\t");
+        visited[i] = true;
+        for (int v : getAdjacentList(i)) {
+            if(!visited[v])dfs(v);
+        }
+    }
+
+
+    public void bfs(){
+        Arrays.fill(visited, false);
+        for(int i=0; i<numVertex; i++) {
+            if(!visited[i]) bfs(i);
+        }
+    }
+    private void bfs(int i) {
+        Queue<Integer> q = new LinkedList<>();
+        visited[i] = true;
+        q.offer(i);
+        while(!q.isEmpty()) {
+            int v = q.poll();
+            System.out.print(v+"\t");
+            for(int w : getAdjacentList(v)) {
+                if(!visited[w]){
+                    visited[w] = true;
+                    q.offer(w);
+                }
+            }
+        }
     }
 
     @Override
