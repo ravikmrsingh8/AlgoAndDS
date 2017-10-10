@@ -1,4 +1,4 @@
-package com.example.ds.graph.mst;
+package com.example.ds.graph.mst.kruskal;
 
 
 import java.util.List;
