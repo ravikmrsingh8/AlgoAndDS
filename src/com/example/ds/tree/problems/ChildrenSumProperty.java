@@ -24,11 +24,18 @@ public class ChildrenSumProperty {
 
     private static boolean childrenSumProperty(Node root) {
         if (root == null) return true;
-        else if (root.left == null && root.right == null) return true;
-        else if (root.left == null) return root.data == root.right.data;
-        else if (root.right == null) return root.data == root.left.data;
-        else return root.data == root.left.data + root.right.data
+        else if (isLeaf(root)) return true;
+        else {
+            int leftData = root.left != null ? root.left.data : 0;
+            int rightData = root.right != null ? root.right.data : 0;
+            return root.data == leftData + rightData
                     && childrenSumProperty(root.left)
                     && childrenSumProperty(root.right);
+        }
+    }
+
+    private static boolean isLeaf(Node root) {
+        if (root == null) return false;
+        return root.left == null && root.right == null;
     }
 }
