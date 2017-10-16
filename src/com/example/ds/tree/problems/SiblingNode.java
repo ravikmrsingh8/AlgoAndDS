@@ -29,17 +29,13 @@ public class SiblingNode {
     private static boolean isSibling(Node root, int p, int q) {
         if (root == null) {
             return false;
-        } else if (root.left == null && root.right == null) {
-            return false;
-        } else if (root.left == null) {
-            return isSibling(root.right, p, q);
-        } else if (root.right == null) {
-            return isSibling(root.left, p, q);
-        } else {
-            return (root.left.data == p && root.right.data == q)
-                    || (root.left.data == q && root.right.data == p)
-                    || isSibling(root.left, p, q)
-                    || isSibling(root.right, p, q);
         }
+        if (root.left != null && root.right != null) {
+            if (root.left.data == p && root.right.data == q || root.left.data == q && root.right.data == p) {
+                return true;
+            }
+        }
+        return isSibling(root.left, p, q) || isSibling(root.right, p, q);
     }
+
 }

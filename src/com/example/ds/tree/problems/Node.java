@@ -11,7 +11,9 @@ public class Node {
     public Node(int data) {
         this.data = data;
     }
-
+    public Node(String data) {
+        this.data = Integer.parseInt(data);
+    }
     public Node(Node node) {
         this.data = node.data;
     }

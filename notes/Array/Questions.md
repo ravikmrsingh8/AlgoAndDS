@@ -3,4 +3,4 @@
 2. Given an array and a window size and window moves from left to right till the rightmost side of window  hits the other side of array, print max element in the window for each step in the process
 
 3. Largest Sum contiguous subarray, Kadane algorithm
-4. 
+4. Print matrix in diagonal pattern 
