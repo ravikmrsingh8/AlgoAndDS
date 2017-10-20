@@ -13,9 +13,9 @@ public class ConvertToSumTree {
 
         System.out.println("Tree");
         Utility.levelOrderLineByLine(root);
-        Node root1 = sumTree1(root);
+        sumTree1(root);
         System.out.println("Sum Tree(O(N^2))");
-        Utility.levelOrderLineByLine(root1);
+        Utility.levelOrderLineByLine(root);
 
         Node root2 = sumTree2(root);
         System.out.println("Sum Tree(O(N))");
@@ -24,12 +24,11 @@ public class ConvertToSumTree {
     }
 
     //Solution 1
-    private static Node sumTree1(Node root) {
-        if (root == null) return null;
+    private static void sumTree1(Node root) {
+        if (root == null) return;
         root.data = sum(root.left) + sum(root.right);
         sumTree1(root.left);
         sumTree1(root.right);
-        return root;
     }
 
     private static int sum(Node root) {

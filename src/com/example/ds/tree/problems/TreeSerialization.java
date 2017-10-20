@@ -1,5 +1,13 @@
 package com.example.ds.tree.problems;
-
+/*=====================================================
+           1
+         /  \
+        2    3
+       / \    \
+      4   5   6
+     /
+    7
+=======================================================*/
 import java.util.LinkedList;
 import java.util.Queue;
 
