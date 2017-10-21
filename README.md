@@ -25,6 +25,18 @@ Data Structures and Algorithms Problems
 
 <BR />
 
+## List
+
+|Questions |   |    |
+|----------|---|----|
+|Deletion and Addition|Find Middle Node in List|Reverse a List|
+|Swap two Nodes in list|Merge two sorted List |Faltten a list with down and right pointers|
+|Union and Intersection of two List|Nth Node from end|Detect loop in linked List|
+|Chcek if linkedlist is palindrome|Remove duplicates from sorted list |Remove duplicates from unsorted list|
+|Delete Alternate Nodes|Reverse alternate k nodes |Segregate even and odd nodes in list|
+|Add two numbers represented by list |Segreate even and odd nodes in list|Sort a list of numebrs having 0, 1 and 2|
+|Find intersection point of two linkedlist|||
+
 ## Graph
 
 |Traversals |     |     |
