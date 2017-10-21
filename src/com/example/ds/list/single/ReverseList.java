@@ -2,11 +2,7 @@ package com.example.ds.list.single;
 
 public class ReverseList {
     public static void main(String[] args) {
-        Node head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
-        head.next.next.next.next = new Node(5);
+        Node head = Utility.getList(new int[]{1,2,3,4,5});
         System.out.print("List: ");Utility.printList(head);
         head = reverse(head);
         System.out.print("List: ");Utility.printList(head);
