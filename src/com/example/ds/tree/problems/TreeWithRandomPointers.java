@@ -38,18 +38,18 @@ public class TreeWithRandomPointers {
 
     private static RNode clone(RNode root) {
         Map<RNode,RNode> map = new HashMap<>();
-        copyLeftRight(root, map);
+        copyNode(root, map);
         storeLinks(root,map);
         return map.get(root);
     }
 
 
-    private static void copyLeftRight(RNode root,Map<RNode, RNode> map) {
+    private static void copyNode(RNode root,Map<RNode, RNode> map) {
         if(root == null) return;
         RNode rNode = new RNode(root);
         map.put(root,rNode);
-        copyLeftRight(root.left,map);
-        copyLeftRight(root.right, map);
+        copyNode(root.left,map);
+        copyNode(root.right, map);
     }
 
     private static void storeLinks(RNode root,Map<RNode, RNode> map) {
