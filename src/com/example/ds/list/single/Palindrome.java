@@ -41,39 +41,39 @@ public class Palindrome {
 
     //Solution 1
     private static boolean isPalindrome(Node head) {
+        if(head == null) return true;
 
-        //Get Middle Node of List
+        //Get tail of first half of List
         Node sPointer = head;
         Node fPointer = head;
-        Node firstHalfTail = head;
+        Node tail$1 = head;
         while(fPointer != null && fPointer.next != null) {
-            firstHalfTail = sPointer;
+            tail$1 = sPointer;
             sPointer = sPointer.next;
             fPointer  = fPointer.next.next;
         }
-        Node middleNode = sPointer;
-        Node nextHalfHead = middleNode;
-        //If odd number of node, make hextHalfHead as next of middle Node
+        Node head$2 = tail$1.next;
+        Node middle = null;
+        //If odd number of node, get middleNode
         if(fPointer != null) {
-            nextHalfHead = middleNode.next;
+            middle = tail$1.next;
+            head$2 = middle.next;
         }
 
         //Reverse nextHalfNode
-        nextHalfHead = reverse(nextHalfHead);
+        head$2 = reverse(head$2);
         //Set firstHalf's tail's next as null
-        firstHalfTail.next = null;
+        tail$1.next = null;
         //Check if both half are palindrome
-        boolean isPal = isEqual(head, nextHalfHead);
-
+        boolean isPal = isEqual(head, head$2);
 
         //Restore List
-        //reverse second half
-        nextHalfHead = reverse(nextHalfHead);
-
-        firstHalfTail.next = nextHalfHead;
-        if(fPointer != null) {
-            firstHalfTail.next = middleNode;
-            middleNode.next = nextHalfHead;
+        head$2 = reverse(head$2);
+        tail$1.next = head$2;
+        //if middle node include it in list
+        if(middle != null) {
+            tail$1.next = middle;
+            middle.next = head$2;
         }
         return isPal;
     }

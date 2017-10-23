@@ -1,7 +1,5 @@
 package com.example.ds.list.single;
 
-import javax.rmi.CORBA.Util;
-
 public class MergeSortedList {
     public static void main(String[] args) {
         Node head1 = Utility.getList(new int[]{1,20,30,35,50});
@@ -11,7 +9,7 @@ public class MergeSortedList {
         Utility.printList(head2);
 
         Node head = merge(head1,head2);
-        Utility.printList(head2);
+        Utility.printList(head);
     }
 
     static Node merge(Node head1, Node head2) {
