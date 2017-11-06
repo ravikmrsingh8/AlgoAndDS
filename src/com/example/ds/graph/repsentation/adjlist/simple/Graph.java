@@ -1,4 +1,4 @@
-package com.example.ds.graph.traversal;
+package com.example.ds.graph.repsentation.adjlist.simple;
 /*========================================================
 0->[5, 1, 2, 6]
 1->[0]

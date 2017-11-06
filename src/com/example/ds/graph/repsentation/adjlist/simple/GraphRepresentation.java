@@ -1,4 +1,4 @@
-package com.example.ds.graph.traversal;
+package com.example.ds.graph.repsentation.adjlist.simple;
 
 
 import java.io.InputStream;
