@@ -1,4 +1,4 @@
-package com.example.ds.tree.problems;
+package com.example.ds.tree.bst;
 /*=================================================================
             45
         /       \
@@ -8,6 +8,9 @@ package com.example.ds.tree.problems;
              /
             55
 ===================================================================*/
+
+import com.example.ds.tree.problems.Node;
+import com.example.ds.tree.problems.Utility;
 
 public class BST {
     public static void main(String[] args) {
