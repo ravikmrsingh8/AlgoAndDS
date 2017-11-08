@@ -18,10 +18,6 @@ public class TestAVL {
 
         System.out.println("AVL Tree");
         Utility.levelOrderLineByLine(root);
-        System.out.println("Delete 30");
-        avl.delete(root, 30);
-        System.out.println("AVL Tree");
-        Utility.levelOrderLineByLine(root);
 
     }
 }

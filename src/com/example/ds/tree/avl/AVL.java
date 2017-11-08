@@ -12,30 +12,6 @@ public class AVL {
         return balanceTree(root, data);
     }
 
-    public Node delete(Node root, int key) {
-        if (root == null) return null;
-        else if (key < root.data) {
-            root.left = delete(root.left, key);
-        } else if (key > root.data) {
-            root.right = delete(root.right, key);
-        } else {
-            if (root.left == null && root.right == null) {
-                return null;
-            } else if (root.left == null) {
-                return root.right;
-            } else if (root.right == null) {
-                return root.left;
-            } else {
-                Node nextNode = getInorderSuccessor(root);
-                root.data = nextNode.data;
-                root.right = delete(root.right, nextNode.data);
-            }
-        }
-        //set height of root
-        root.height = Math.max(getHeight(root.left), getHeight(root.right)) + 1;
-        return balanceTree(root,key);
-    }
-
     private Node balanceTree(Node root,int addedData) {
         int bFactor = getBalanceFactor(root);
         if(bFactor > 1) {
@@ -59,15 +35,6 @@ public class AVL {
         }
         return root;
     }
-
-    public Node getInorderSuccessor(Node root) {
-        Node curNode = root.right;
-        if (curNode.left != null) {
-            curNode = curNode.left;
-        }
-        return curNode;
-    }
-
 
     public Node leftRotate(Node root) {
         Node rightChild = root.right;
