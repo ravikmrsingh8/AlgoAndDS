@@ -2,39 +2,72 @@ package com.example.ds.tree.avl;
 
 public class AVL {
     public Node insert(Node root, int data) {
-        if (root == null) return new Node(data);
+        if (root == null) root = new Node(data);
         else if (data < root.data) {
             root.left = insert(root.left, data);
         } else if (data > root.data) {
             root.right = insert(root.right, data);
         }
-
         root.height = 1 + Math.max(getHeight(root.left), getHeight(root.right));
-        int bFactor = getBalanceFactor(root);
+        return balanceTree(root, data);
+    }
 
-        if (bFactor > 1) {
-            // Node added in Left Subtree
-            if (data < root.left.data) {
-                // LL Case, do right rotate
+    public Node delete(Node root, int key) {
+        if (root == null) return null;
+        else if (key < root.data) {
+            root.left = delete(root.left, key);
+        } else if (key > root.data) {
+            root.right = delete(root.right, key);
+        } else {
+            if (root.left == null && root.right == null) {
+                return null;
+            } else if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            } else {
+                Node nextNode = getInorderSuccessor(root);
+                root.data = nextNode.data;
+                root.right = delete(root.right, nextNode.data);
+            }
+        }
+        //set height of root
+        root.height = Math.max(getHeight(root.left), getHeight(root.right)) + 1;
+        return balanceTree(root,key);
+    }
+
+    private Node balanceTree(Node root,int addedData) {
+        int bFactor = getBalanceFactor(root);
+        if(bFactor > 1) {
+            if(addedData < root.left.data) {
+                //LL case, right rotate around root
                 return rightRotate(root);
-            } else if (data > root.left.data) {
-                //LR Case, do left rotate around left child of root and then right rotate around root
+            } else if(addedData > root.left.data) {
+                //LR case, left rotate around left child, then right rotate around root
                 root.left = leftRotate(root.left);
                 return rightRotate(root);
             }
-        } else if (bFactor < -1) {
-            // Node added in right subtree
-            if (data > root.right.data) {
-                //RR Case, Do left rotate around root
+        } else if(bFactor < -1){
+            if(addedData > root.right.data) {
+                //RR case, left rotate around root
                 return leftRotate(root);
-            } else if (data < root.right.data) {
-                //RL Case, do right rotate around right child of root and then left rotate around root
+            } else if(addedData < root.right.data) {
+                //RL Case, right rotate around right child, then left rotate around root
                 root.right = rightRotate(root.right);
                 return leftRotate(root);
             }
         }
         return root;
     }
+
+    public Node getInorderSuccessor(Node root) {
+        Node curNode = root.right;
+        if (curNode.left != null) {
+            curNode = curNode.left;
+        }
+        return curNode;
+    }
+
 
     public Node leftRotate(Node root) {
         Node rightChild = root.right;
