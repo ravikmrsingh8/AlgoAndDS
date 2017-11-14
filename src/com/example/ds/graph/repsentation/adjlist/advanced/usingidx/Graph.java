@@ -1,4 +1,4 @@
-package com.example.ds.graph.repsentation.adjlist.advanced;
+package com.example.ds.graph.repsentation.adjlist.advanced.usingidx;
 
 import java.util.*;
 

@@ -1,4 +1,7 @@
-package com.example.ds.graph.mst.prim;
+package com.example.ds.graph.mst.prim2;
+
+
+import java.util.List;
 
 public class PrimTest {
     public static void main(String[] args) {
@@ -19,9 +22,9 @@ public class PrimTest {
         g.addEdge(6,5,2);
         System.out.println("Graph:");
         System.out.println(g);
-        Prim.run(g);
+        List<Edge> edges =Prim.mst(g);
         System.out.println("Minimum Spanning Tree");
-        System.out.println(g);
+        System.out.println(edges);
 
         Graph g2 = new Graph(5);
         g2.addEdge(0,1,2);
@@ -33,15 +36,9 @@ public class PrimTest {
         g2.addEdge(3,4,9);
         System.out.println("Graph:");
         System.out.println(g2);
-        Prim.run(g2);
+        List<Edge> edges2 =Prim.mst(g2);
         System.out.println("Minimum Spanning Tree");
-        System.out.println(g2);
-        //Print minimum cost
-        int minCost = 0;
-        for(int i =0 ;i < g2.N; i++) {
-            minCost += g2.vertices.get(i).key;
-        }
-        System.out.println("MinCost"+minCost);
+        System.out.println(edges2);
 
 
     }

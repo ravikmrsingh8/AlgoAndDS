@@ -1,5 +1,10 @@
 package com.example.ds.graph.mst.kruskal;
-
+/*==============================================
+Kruskal's Algorithm Steps:
+1.Sort the graph edges with respect to their weights.
+2.Start adding edges to the MST from the edge with the smallest weight until mst has V-1 edges
+3.Only add edges which doesn't form a cycle ,i.e add edges which connect only disconnected components.
+ ===============================================*/
 import com.example.ds.graph.disjointsets.DisjointSet;
 
 import java.util.ArrayList;

@@ -1,28 +1,30 @@
 package com.example.ds.graph.mst.prim;
 
-import java.util.*;
+
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class Prim {
-    public static List<Edge>  mst(Graph g){
-        boolean visited[] = new boolean[g.size()];
-        List<Edge> edges = new ArrayList<>();
-        int v = g.getStartVertex();
-        Queue<Edge> queue = new PriorityQueue<>(16, Comparator.comparingDouble(e->e.getWeight()));
-        visited[v] = true;
-        for(Edge e : g.getAdjacentEdges(v)){
-            queue.offer(e);
-        }
-        int minSum = 0;
+    public static void run(Graph g) {
+        boolean visited[] = new boolean[g.N];
+        Vertex v0 = g.vertices.get(0);
+        v0.key = 0;
+        Queue<Vertex> queue = new PriorityQueue<>(16, Comparator.comparingInt(v->v.key));
+        queue.offer(v0);
         while(!queue.isEmpty()) {
-            Edge e = queue.poll();
-            if(!visited[e.getDest()]) {
-                edges.add(e);
-                minSum += e.getWeight();
-                visited[e.getDest()] = true;
-                g.getAdjacentEdges(e.getDest()).forEach((e1)->queue.offer(e1));
-            }
+            Vertex curr = queue.poll();
+            visited[curr.idx] = true;
+            curr.edges.forEach((v,w)->{
+                if(!visited[v]) {
+                    Vertex dest = g.vertices.get(v);
+                    if(w < dest.key) {
+                        dest.key = w;
+                        dest.prev = curr.idx;
+                    }
+                    queue.offer(dest);
+                }
+            });
         }
-        System.out.println("Minimum Cost:"+minSum);
-        return edges;
     }
 }
