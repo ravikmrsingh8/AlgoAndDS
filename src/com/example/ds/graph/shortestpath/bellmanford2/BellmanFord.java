@@ -3,6 +3,7 @@ package com.example.ds.graph.shortestpath.bellmanford2;
 import java.util.List;
 
 public class BellmanFord {
+    public static final int INF = Integer.MAX_VALUE;
     public boolean run(Graph g) {
         int N = g.vertices.size();
         List<Edge> edges = g.edges;
@@ -11,9 +12,11 @@ public class BellmanFord {
             edges.forEach(edge -> {
                 Vertex src = edge.src;
                 Vertex dest = edge.dest;
-                if (src.key + edge.cost < dest.key) {
-                    dest.key = src.key + edge.cost;
-                    dest.prev = src.id;
+                if (src.key != INF) {
+                    if (src.key + edge.cost < dest.key) {
+                        dest.key = src.key + edge.cost;
+                        dest.prev = src.id;
+                    }
                 }
             });
         }
@@ -25,7 +28,9 @@ public class BellmanFord {
         for (Edge edge : g.edges) {
             Vertex src = edge.src;
             Vertex dest = edge.dest;
-            if (src.key + edge.cost < dest.key) return true;
+            if (src.key != INF) {
+                if (src.key + edge.cost < dest.key) return true;
+            }
         }
         return false;
     }
