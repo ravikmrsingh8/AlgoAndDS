@@ -1,8 +1,9 @@
-package com.example.ds.graph.maxflow;
+package com.example.ds.graph.maxflow.adjm;
 
+public class FordFulkersonTest {
 
-public class TestFordFulkerson {
     public static void main(String[] args) {
+
         Graph g = new Graph(6);
         g.addEdge(0,1,16);
         g.addEdge(0,2,13);
@@ -14,10 +15,8 @@ public class TestFordFulkerson {
         g.addEdge(4,3,7);
         g.addEdge(3,5,20);
         g.addEdge(4,5,4);
-        System.out.println("Graph");
-        System.out.println(g);
 
-        int maxFlow = FordFulkerson.getMaxFlow(g, 0, 5);
+        int maxFlow = FordFulkerson.findMaxFlow(g, 0, 5);
         System.out.println("Max Flow "+maxFlow);
 
 
@@ -35,8 +34,8 @@ public class TestFordFulkerson {
         g2.addEdge(5,4, 3);
         g2.addEdge(5,6, 9);
 
-        System.out.println("\nGraph :\n" + g2);
-        maxFlow = FordFulkerson.getMaxFlow(g2, 0, 6);
+
+        maxFlow = FordFulkerson.findMaxFlow(g2, 0, 6);
         System.out.println("Max Flow "+maxFlow);
 
     }

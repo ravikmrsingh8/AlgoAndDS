@@ -1,4 +1,4 @@
-package com.example.ds.graph.maxflow;
+package com.example.ds.graph.maxflow.advanced;
 
 import java.util.*;
 
