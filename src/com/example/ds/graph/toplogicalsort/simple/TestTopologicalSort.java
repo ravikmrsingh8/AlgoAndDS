@@ -1,4 +1,4 @@
-package com.example.ds.graph.toplogicalsort;
+package com.example.ds.graph.toplogicalsort.simple;
 
 import java.util.List;
 

@@ -10,21 +10,23 @@ public class Prim {
         boolean visited[] = new boolean[g.N];
         Vertex v0 = g.vertices.get(0);
         v0.key = 0;
-        Queue<Vertex> queue = new PriorityQueue<>(16, Comparator.comparingInt(v->v.key));
+        Queue<Vertex> queue = new PriorityQueue<>(16, Comparator.comparingInt(v -> v.key));
         queue.offer(v0);
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             Vertex curr = queue.poll();
-            visited[curr.idx] = true;
-            curr.edges.forEach((v,w)->{
-                if(!visited[v]) {
-                    Vertex dest = g.vertices.get(v);
-                    if(w < dest.key) {
-                        dest.key = w;
-                        dest.prev = curr.idx;
+            if (!visited[curr.idx]) {
+                visited[curr.idx] = true;
+                curr.edges.forEach((v, w) -> {
+                    if (!visited[v]) {
+                        Vertex dest = g.vertices.get(v);
+                        if (w < dest.key) {
+                            dest.key = w;
+                            dest.prev = curr.idx;
+                        }
+                        queue.offer(dest);
                     }
-                    queue.offer(dest);
-                }
-            });
+                });
+            }
         }
     }
 }

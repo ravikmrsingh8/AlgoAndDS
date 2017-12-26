@@ -85,7 +85,7 @@ public class PathFromRootToLeaf {
     }
     // Solution 3
     // Alternate Solution using Map
-    // For each Node store their parent,
+    // For each DNode store their parent,
     // Then simply when you reach end, print path using map;
     private static void printPaths(Node root) {
         Map<Node, Node> map = new HashMap<Node, Node>();

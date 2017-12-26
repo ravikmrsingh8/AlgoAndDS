@@ -25,7 +25,6 @@ public class UnionIntersectionInSortedList {
     }
 
     //Modify the original list to have union
-    // we assume that initially each element ahs distinct values
     static Node union(Node head1, Node head2){
         if(head1 == null) return head1;
         if(head2 == null) return head2;

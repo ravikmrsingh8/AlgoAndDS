@@ -46,15 +46,13 @@ public class SumTree {
             return true;
         } else {
             int leftSum = 0;
-            if (root.left == null) leftSum = 0;
-            else if (isLeaf(root.left)) leftSum = root.left.data;
-            else leftSum = 2 * root.left.data;
-
             int rightSum = 0;
-            if (root.right == null) rightSum = 0;
-            else if (isLeaf(root.right)) rightSum = root.right.data;
-            else rightSum = 2 * root.right.data;
-
+            if (root.left != null){
+                leftSum = isLeaf(root.left)?root.left.data : 2 * root.left.data;
+            }
+            if(root.right != null) {
+                rightSum = isLeaf(root.right)? root.right.data : 2 * root.right.data;
+            }
             return root.data == leftSum + rightSum
                     && isSumTree2(root.left)
                     && isSumTree2(root.right);

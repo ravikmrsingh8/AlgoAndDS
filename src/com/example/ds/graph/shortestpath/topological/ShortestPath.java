@@ -3,7 +3,18 @@ package com.example.ds.graph.shortestpath.topological;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+/*===========================================================
+Shortest Path Algorithm in DAG
+1)store the topological order of vertices in a list
+2)get the src vertex, set its key to 0
+3)forEach Vertex u in topological order, if u.key is not INF then
+    3.1)forEach edge of u do following
+        3.1.1)if cost of edge + current vertex key < destination key ,
+              3.1.1.1)update destination's cost
+              3.1.1.2)update destination's prev as current node
 
+
+=============================================================*/
 public class ShortestPath {
     private static boolean[] visited;
     private static final int INF = Integer.MAX_VALUE;

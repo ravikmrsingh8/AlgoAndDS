@@ -28,7 +28,7 @@ public class BinaryTreeToBST {
         System.out.println("Tree After Conversion");
         levelOrderLineByLine(root);
     }
-    //This method only copies data, Node refs will remain same,
+    //This method only copies data, DNode refs will remain same,
     // If we can only change the links then this would be a tough one
     private static void toBST(Node root) {
         List<Integer> list = new ArrayList<>();

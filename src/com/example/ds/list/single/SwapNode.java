@@ -16,7 +16,7 @@ public class SwapNode {
         Utility.printList(head);
     }
     static Node swapNodes(Node head, int x, int y) {
-        //Get x and y and their prev Node
+        //Get x and y and their prev DNode
         Node newHead = head;
         Node curX = head;
         Node prevX = null;

@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Vertex {
-    public int idx;
+    public int id;
     public int key;
     public int prev;
     public Map<Integer, Integer> edges = new HashMap<>();
     public Vertex(int idx) {
-        this.idx = idx;
+        this.id = idx;
         this.key = Integer.MAX_VALUE;
         this.prev = -1;
     }
@@ -17,13 +17,13 @@ public class Vertex {
     @Override
     public String toString() {
         StringBuilder sb =new StringBuilder();
-        sb.append("[V:"+idx);
-        sb.append(",K:"+key);
-        sb.append(",P:"+prev);
+        sb.append("[u:"+id);
+        sb.append(",k:"+key);
+        sb.append(",p:"+prev);
         sb.append("]");
         sb.append("EDGE:");
         edges.forEach((v,w)->{
-            sb.append("[").append(v).append(",").append(w).append("]");
+            sb.append("[v:").append(v).append(",w:").append(w).append("]");
         });
         return sb.toString();
     }

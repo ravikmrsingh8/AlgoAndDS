@@ -1,8 +1,17 @@
 package com.example.ds.list.single;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Utility {
     public static void printList(Node head) {
+        Set<Node> nodes = new HashSet<>();
         while(head != null) {
+            if(nodes.contains(head)) {
+                System.out.println("List contains cycle");
+                break;
+            }
+            nodes.add(head);
             System.out.print(head+"\t");
             head = head.next;
         }

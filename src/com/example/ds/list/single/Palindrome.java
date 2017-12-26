@@ -91,9 +91,9 @@ public class Palindrome {
     private static Node reverse(Node head) {
         Node prevNode = null;
         Node currNode = head;
-        Node nextNode = head;
+
         while(currNode != null) {
-            nextNode = currNode.next;
+            Node nextNode = currNode.next;
             currNode.next = prevNode;
             prevNode = currNode;
             currNode = nextNode;

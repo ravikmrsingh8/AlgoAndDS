@@ -5,12 +5,12 @@ public class MiddleNode {
         Node head = Utility.getList(new int[]{1,2,3,4,5});
         Utility.printList(head);
         Node node = middleNode(head);
-        System.out.println("Middle Node :"+node);
+        System.out.println("Middle DNode :"+node);
 
         head = Utility.getList(new int[]{1,2,3,4});
         Utility.printList(head);
         node = middleNode(head);
-        System.out.println("Middle Node :"+node);
+        System.out.println("Middle DNode :"+node);
     }
 
     private static Node middleNode(Node head) {

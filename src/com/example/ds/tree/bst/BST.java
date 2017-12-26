@@ -63,13 +63,13 @@ public class BST {
             root.right = delete(root.right, key);
         } else {
             if (root.left == null && root.right == null) {
-                //Leaf Node
+                //Leaf DNode
                 return null;
             } else if (root.left == null) {
-                //Left subtree null return right subtree root
+                //Left subtree is null, so return right subtree root
                 return root.right;
             } else if (root.right == null) {
-                //Right subtree null return left subtree root
+                //Right subtree is null,so return left subtree root
                 return root.left;
             } else {
                 //Get Inorder Successor

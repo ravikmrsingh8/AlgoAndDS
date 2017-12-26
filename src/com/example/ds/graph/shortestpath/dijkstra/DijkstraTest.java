@@ -39,9 +39,9 @@ public class DijkstraTest {
         System.out.println("Path for "+dest);
         Vertex v = g.vertices().get(dest);
         do {
-            int prevVertex = v.prevVertexId;
+            int prevVertex = v.prev;
             System.out.print(prevVertex+" ");
             v = g.vertices().get(prevVertex);
-        }while(v.prevVertexId != -1);
+        }while(v.prev != -1);
     }
 }
