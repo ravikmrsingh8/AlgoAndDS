@@ -28,7 +28,7 @@ public class ReadmeUpdater {
             while(i<files.size()) {
                 if(i%4 == 0)sb.append("|");
                 String filePath = (path + _$ + cat + _$ + files.get(i)).replaceAll("\\\\", "/");
-                sb.append((i + 1) + ". [" + files.get(i) + "](" + filePath + ")");
+                sb.append("[" + files.get(i) + "](" + filePath + ")");
                 sb.append("|");
                 i++;
                 if(i%4 == 0) sb.append("\r\n");
