@@ -43,6 +43,7 @@ public class ReadmeUpdater {
                 sb.append("  |");
             }
 
+            sb.append("\r\n");
             System.out.println(sb);
             try {
                 br.write(sb.toString());
