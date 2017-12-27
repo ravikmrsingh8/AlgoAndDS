@@ -21,12 +21,26 @@ public class ReadmeUpdater {
         files.forEach((cat, files) -> {
             StringBuilder sb = new StringBuilder();
             sb.append("\r\n|" + cat + "|  |  |  |" + "\r\n" + "|-----------------|--|--|--|\r\n");
-            for (int i = 0; i < files.size(); i++) {
-                if (i % 4 == 0) sb.append("|");
+
+            int cells = (int)Math.ceil(files.size()/4.0)*4;
+            int i=0;
+
+            while(i<files.size()) {
+                if(i%4 == 0)sb.append("|");
                 String filePath = (path + _$ + cat + _$ + files.get(i)).replaceAll("\\\\", "/");
-                sb.append((i + 1) + ". [" + files.get(i) + "](" + filePath + ")" + "|");
-                if ((i + 1) % 4 == 0) sb.append("\r\n");
+                sb.append((i + 1) + ". [" + files.get(i) + "](" + filePath + ")");
+                sb.append("|");
+                i++;
+                if(i%4 == 0) sb.append("\r\n");
             }
+            if(i <cells) {
+                while(i<cells){
+                    sb.append(" |");
+                    i++;
+                }
+                sb.append("\r\n");
+            }
+
             System.out.println(sb);
             try {
                 br.write(sb.toString());
