@@ -20,25 +20,27 @@ public class ReadmeUpdater {
 
         files.forEach((cat, files) -> {
             StringBuilder sb = new StringBuilder();
-            sb.append("\r\n|" + cat + "|  |  |  |" + "\r\n" + "|-----------------|--|--|--|\r\n");
 
-            int cells = (int)Math.ceil(files.size()/4.0)*4;
-            int i=0;
+            int columns = files.size() < 4 ? files.size() : 4;
+            sb.append("\r\n|" + cat + "|");
+            for (int i = 1; i < columns; i++) sb.append("  |");
+            sb.append("\r\n|");
+            for (int i = 0; i < columns; i++) sb.append("--|");
+            sb.append("\r\n");
 
-            while(i<files.size()) {
-                if(i%4 == 0)sb.append("|");
+            int i = 0;
+            while (i < files.size()) {
+                if (i % columns == 0) sb.append("|");
                 String filePath = (path + _$ + cat + _$ + files.get(i)).replaceAll("\\\\", "/");
                 sb.append("[" + files.get(i) + "](" + filePath + ")");
                 sb.append("|");
                 i++;
-                if(i%4 == 0) sb.append("\r\n");
+                if (i % columns == 0) sb.append("\r\n");
             }
-            if(i <cells) {
-                while(i<cells){
-                    sb.append(" |");
-                    i++;
-                }
-                sb.append("\r\n");
+
+            int cells = (int) Math.ceil(((double) files.size()) / columns)*columns;
+            while (i++ < cells) {
+                sb.append("  |");
             }
 
             System.out.println(sb);
