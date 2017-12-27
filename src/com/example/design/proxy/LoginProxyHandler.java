@@ -17,7 +17,7 @@ public class LoginProxyHandler implements InvocationHandler {
         System.out.println("Password: "+args[1]);
         args[0] = ((String)args[0]).toLowerCase();
         System.out.println("Changing UserId in small cases: "+args[0]);
-        method.invoke(loginService,args);
-        return true;
+        return method.invoke(loginService,args);
+
     }
 }
