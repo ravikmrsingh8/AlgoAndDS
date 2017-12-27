@@ -24,22 +24,22 @@ public class AlternateSplit {
         Node head1 = new Node(0);
         Node head2 = new Node(0);
 
-        Node res1 = head1;
-        Node res2 = head2;
+        Node tail1 = head1;
+        Node tail2 = head2;
 
         while(head != null ) {
-            head1.next = head;
-            head1 = head1.next;
+            tail1.next = head;
+            tail1 = tail1.next;
 
-            head2.next = head.next;
-            head2 = head2.next;
+            tail2.next = head.next;
+            tail2 = tail2.next;
 
             head = head.next;
             if(head != null) head = head.next;
         }
-        if(head1 != null) head1.next = null;
-        if(head2 != null) head2.next = null;
+        if(tail1 != null) tail1.next = null;
+        if(tail2 != null) tail2.next = null;
 
-        return new WrapHeads(res1.next, res2.next);
+        return new WrapHeads(head1.next, head2.next);
     }
 }
