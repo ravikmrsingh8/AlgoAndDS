@@ -7,7 +7,7 @@ import java.util.*;
 public class ReadmeUpdater {
     private static final String _$ = File.separator;
     private static final Map<String, List<String>> files = new LinkedHashMap<>();
-    private static final String path = "."+_$+"src"+_$+"com"+_$+"example"+_$;
+    private static final String path = "src"+_$+"com"+_$+"example"+_$;
 
     public static void main(String[] args) throws IOException {
         parseDirectories();
@@ -19,12 +19,12 @@ public class ReadmeUpdater {
         BufferedWriter br = new BufferedWriter(new FileWriter("./README.md"));
         files.forEach((cat, files)->{
             try {
-                System.out.println("<h2>"+cat+"</h2>");
-                br.write("<h2>"+cat+"</h2>");
+                System.out.println("### "+cat);
+                br.write("### "+cat);
                 br.newLine();
-                for(String file: files) {
-                    System.out.println("\t- ["+file+"]("+path+cat+file+")");
-                    br.write("\t- "+file);
+                for(int i=0; i<files.size(); i++) {
+                    System.out.println((i+1)+". ["+files.get(i)+"]("+path+cat+files.get(i)+")");
+                    br.write((i+1)+". ["+files.get(i)+"]("+path+cat+files.get(i)+")");
                     br.newLine();
                 }
                 ;
@@ -41,7 +41,7 @@ public class ReadmeUpdater {
             String pathStr = p.toString();
             int index = pathStr.indexOf(_$+"example")+ 9;
 
-            String category = pathStr.substring(index, pathStr.indexOf(fileName));
+            String category = pathStr.substring(index, pathStr.indexOf(fileName)-1);
             List<String> jFiles =  files.get(category);
             if(jFiles == null) {
                 jFiles = new ArrayList<>();
