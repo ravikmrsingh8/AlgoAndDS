@@ -22,10 +22,10 @@ public class ReadmeUpdater {
             StringBuilder sb = new StringBuilder();
 
             int columns = files.size() < 4 ? files.size() : 4;
-            sb.append("\r\n|" + cat.replaceAll("\\\\", "  ") + "|");
+            sb.append("\r\n|" + cat.replaceAll("\\\\", "  ") + ": |");
             for (int i = 1; i < columns; i++) sb.append("  |");
             sb.append("\r\n|");
-            for (int i = 0; i < columns; i++) sb.append("--|");
+            for (int i = 0; i < columns; i++) sb.append(":--  |");
             sb.append("\r\n");
 
             int i = 0;
