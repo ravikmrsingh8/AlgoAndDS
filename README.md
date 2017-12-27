@@ -1,48 +1,203 @@
-# AlgoAndDS
-Data Structures and Algorithms Problems
-## Tree
-|  Traversals       |              |          |
-|-------------------|--------------|----------|                                           
-|[1.1 PreOrder](src/com/example/ds/tree/traversal/Traversal.java)|[1.2 PostOrder](src/com/example/ds/tree/traversal/Traversal.java)|[1.3 InOrder](src/com/example/ds/tree/traversal/Traversal.java)|
-|[1.4 LevelOrder](src/com/example/ds/tree/traversal/Traversal.java)|[1.5 Level Order Line by line](src/com/example/ds/tree/traversal/Traversal.java)|[1.6 Level Order Line by Line Using 2 Queues](src/com/example/ds/tree/traversal/Traversal.java)|
-|[1.7 Reverse Level Order Traversal](src/com/example/ds/tree/traversal/Traversal.java)|[1.8 ZigZag Traversal](src/com/example/ds/tree/traversal/Traversal.java)|[1.9 Vertical Traversal](src/com/example/ds/tree/traversal/Traversal.java)|
-|[1.10 Left View of Tree](src/com/example/ds/tree/traversal/Traversal.java)|[1.11 Right View Of Tree](src/com/example/ds/tree/traversal/Traversal.java)|[1.12 Top View of Tree](src/com/example/ds/tree/traversal/Traversal.java)|
-|[1.13 Bottom view of Tree](src/com/example/ds/tree/traversal/Traversal.java)|[1.14 Boundary Traversal](src/com/example/ds/tree/traversal/Traversal.java)|[1.15 Iterative preOrder](src/com/example/ds/tree/traversal/Traversal.java)|
-|[1.16 Iterative postOrder](src/com/example/ds/tree/traversal/Traversal.java)|[1.17 Iterative inOrder](src/com/example/ds/tree/traversal/Traversal.java)||
-
-
-|<b>Questions</b> |	  	 |		|
-|-----------------|------|----|
-|2.1 Convert a binary tree into Doubly linkedlist|[2.2 Convert a given tree to its Sum Tree](src/com/example/ds/tree/problems/ConvertToSumTree.java)|[2.3 Convert a Binary Tree into its Mirror Tree](src/com/example/ds/tree/problems/MirrorTree.java)| 
-|[3.1 Connect Node at same level](src/com/example/ds/tree/problems/ConnectNodes.java)|[3.2 Clone a Tree](src/com/example/ds/tree/problems/CloneTree.java)|[3.3 Clone a Tree with Random pointers](src/com/example/ds/tree/problems/TreeWithRandomPointers.java)|
-|[3.4 Write Code to Determine if Two Trees are Identical](src/com/example/ds/tree/problems/IdenticalTree.java)|[3.5 Check if two trees are mirror image of each other](src/com/example/ds/tree/problems/MirrorTree.java)|[3.6 Create mirror image of a tree](src/com/example/ds/tree/problems/MirrorTree.java)|				
-|[3.7 Find height of a tree](src/com/example/ds/tree/problems/HeightOfATree.java)|[3.8 Print all paths in a tree from root to leaves](src/com/example/ds/tree/problems/PathFromRootToLeaf.java)|[3.9 Find Maximum sum in root to leaf Path](src/com/example/ds/tree/problems/MaxSumPath.java)|				
-|[3.9 Print path with maximum sum](src/com/example/ds/tree/problems/MaxSumPath.java)|[3.10 Check if a binary Tree is a BST](src/com/example/ds/tree/problems/CheckIfTreeIsBST.java)|3.11 Find Diameter of a tree|				
-|3.12 Lowest Common Ancestor in a Binary Search Tree|3.13 Lowest Common Ancestor in a Binary Tree|[3.14 Check if a binary tree is subtree of another binary tree](src/com/example/ds/tree/problems/)| 				
-|[3.15 Check if a given Binary Tree is SumTree](src/com/example/ds/tree/problems/SumTree.java)|[3.16 Check for Children Sum Property in a Binary Tree](src/com/example/ds/tree/problems/ChildrenSumProperty.java)|3.17 Print all nodes at distance k from a given DNode|
-|3.18 Find distance between two given keys of a Binary Tree|[3.19 Print Ancestors of a given Node](src/com/example/ds/tree/problems/AllAncestors.java)|[3.20 Check if two nodes are cousin of each other](src/com/example/ds/tree/problems/CheckForCousin.java)|				
-|[3.21 Searialize and Deserialize a binary Tree](src/com/example/ds/tree/problems/TreeSerialization.java)|||		
-
-<BR />
-
-## List
-
-|Questions |   |    |
-|----------|---|----|
-|Deletion and Addition|Find Middle Node in List|Reverse a List|
-|Swap two Nodes in list|Merge two sorted List |Faltten a list with down and right pointers|
-|Union and Intersection of two List|Nth Node from end|Detect loop in linked List|
-|Chcek if linkedlist is palindrome|Remove duplicates from sorted list |Remove duplicates from unsorted list|
-|Delete Alternate Nodes|Reverse alternate k nodes |Segregate even and odd nodes in list|
-|Add two numbers represented by list |Segreate even and odd nodes in list|Sort a list of numebrs having 0, 1 and 2|
-|Find intersection point of two linkedlist|||
-
-## Graph
-
-|Traversals |     |     |
-|-----------|-----|-----|
-| Breadth First Search| Depth First Search|
-
-|Questions |   |    |
-|----------|---|----|
-|Disjoint Sets|Prim's Algorithms|Kruskal's Algorithms|
+<h2>design\proxy\</h2>
+	- LoginProxyHandler.java
+	- LoginService.java
+	- LoginServiceFactory.java
+	- LoginServiceImpl.java
+	- TestProxy.java
+<h2>dp\problems\</h2>
+	- MinimumStepToOne.java
+<h2>ds\graph\disjointsets\</h2>
+	- DisjointSet.java
+	- DisjointSetTest.java
+	- SimpleDisjointSet.java
+	- TestSimpleDisjointSet.java
+<h2>ds\graph\hamilton\</h2>
+	- HamiltonCycle.java
+	- HamiltonPath.java
+<h2>ds\graph\</h2>
+	- largeGraph.txt
+	- tinyGraph.txt
+<h2>ds\graph\maxflow\adjm\</h2>
+	- FordFulkerson.java
+	- FordFulkersonTest.java
+	- Graph.java
+<h2>ds\graph\maxflow\advanced\</h2>
+	- FordFulkerson.java
+	- Graph.java
+	- TestFordFulkerson.java
+	- Vertex.java
+<h2>ds\graph\mst\kruskal\</h2>
+	- Edge.java
+	- Graph.java
+	- Kruskal.java
+	- KruskalTest.java
+<h2>ds\graph\mst\prim\</h2>
+	- Graph.java
+	- Prim.java
+	- PrimTest.java
+	- Vertex.java
+<h2>ds\graph\mst\prim2\</h2>
+	- Edge.java
+	- Graph.java
+	- Prim.java
+	- PrimTest.java
+	- Vertex.java
+<h2>ds\graph\repsentation\adjlist\advanced\usingidx\</h2>
+	- Graph.java
+	- Representation.java
+	- Vertex.java
+<h2>ds\graph\repsentation\adjlist\advanced\usingnames\</h2>
+	- Graph.java
+	- Test.java
+	- Vertex.java
+<h2>ds\graph\repsentation\adjlist\simple\</h2>
+	- Graph.java
+	- GraphRepresentation.java
+<h2>ds\graph\shortestpath\bellmanford\</h2>
+	- BellmanFord.java
+	- BellmanFordTest.java
+	- Graph.java
+	- Vertex.java
+<h2>ds\graph\shortestpath\bellmanford2\</h2>
+	- BellmanFord.java
+	- BellmanFordTest.java
+	- Edge.java
+	- Graph.java
+	- Vertex.java
+<h2>ds\graph\shortestpath\dijkstra\</h2>
+	- Dijkstra.java
+	- DijkstraTest.java
+	- Graph.java
+	- Vertex.java
+<h2>ds\graph\shortestpath\floydwarshall\</h2>
+	- FloydWarshallTest.java
+	- Graph.java
+<h2>ds\graph\shortestpath\topological\</h2>
+	- Graph.java
+	- ShortestPath.java
+	- TestDAGShortestPath.java
+	- Vertex.java
+<h2>ds\graph\toplogicalsort\advanced\</h2>
+	- Graph.java
+	- TopologicalSortTest.java
+	- Vertex.java
+<h2>ds\graph\toplogicalsort\simple\</h2>
+	- Graph.java
+	- TestTopologicalSort.java
+	- TopologicalSort.java
+	- Vertex.java
+<h2>ds\heap\example\</h2>
+	- Heap.java
+	- OnlineMedian.java
+	- Topic.java
+	- TopTrending.java
+<h2>ds\heap\maxheap\</h2>
+	- MaxHeap.java
+	- TestMaxHeap.java
+<h2>ds\heap\minheap\</h2>
+	- MinHeap.java
+	- TestMinHeap.java
+<h2>ds\list\doublelist\</h2>
+	- DLL.java
+	- DNode.java
+	- FlattenList.java
+	- FNode.java
+	- Utilty.java
+<h2>ds\list\single\</h2>
+	- AlternateSplit.java
+	- DeleteAlternateNodes.java
+	- DeleteDuplicates.java
+	- DeleteDuplicatesSortedList.java
+	- DetectAndFixLoop.java
+	- IntersectionPoint.java
+	- List.java
+	- MergeSortedList.java
+	- MiddleNode.java
+	- Node.java
+	- Palindrome.java
+	- ReverseList.java
+	- SwapNode.java
+	- SwapTwoNodes.java
+	- UnionIntersectionInSortedList.java
+	- Utility.java
+<h2>ds\string\</h2>
+	- AllPermutation.java
+	- AllPermutations.java
+<h2>ds\tree\avl\</h2>
+	- AVL.java
+	- Node.java
+	- TestAVL.java
+	- Utility.java
+<h2>ds\tree\bst\</h2>
+	- BST.java
+<h2>ds\tree\node\</h2>
+	- Node.java
+<h2>ds\tree\problems\</h2>
+	- AllAncestors.java
+	- BinaryTreeToBST.java
+	- BinaryTreeToDLL.java
+	- CheckForCousin.java
+	- CheckIfSubtree.java
+	- CheckIfTreeIsBST.java
+	- ChildrenSumProperty.java
+	- CloneTree.java
+	- ConnectNodes.java
+	- ConvertToSumTree.java
+	- ExtractLeafInDLL.java
+	- HeightOfATree.java
+	- IdenticalTree.java
+	- KthAncestor.java
+	- MaxSumPath.java
+	- MirrorTree.java
+	- NNode.java
+	- Node.java
+	- NotHavingSibling.java
+	- PathFromRootToLeaf.java
+	- RNode.java
+	- SiblingNode.java
+	- SortedArrayToBST.java
+	- SortedDLLToBST.java
+	- SumTree.java
+	- TreeSerialization.java
+	- TreeWithRandomPointers.java
+	- Utility.java
+<h2>ds\tree\traversal\</h2>
+	- Order.java
+	- Traversal.java
+	- Tree.java
+	- XNode.java
+<h2>ds\trie\</h2>
+	- Dictionary.java
+	- DictionaryImpl.java
+	- DictionaryLoader.java
+	- Factory.java
+	- TestDictionary.java
+	- words.txt
+<h2>misc\app\</h2>
+	- TimerApp.java
+<h2>misc\competitive\</h2>
+	- FastScanner.java
+<h2>problems\geometry\</h2>
+	- MaxPointsOnALine.java
+	- Point.java
+	- Rational.java
+<h2>problems\misc\</h2>
+	- HourAndMinuteHandAngle.java
+<h2>problems\numericalmethods\</h2>
+	- NewtonRaphson.java
+<h2>sort\</h2>
+	- BinarySearch.java
+	- BubbleSort.java
+	- BucketSort.java
+	- CountingSort.java
+	- HeapSort.java
+	- InsertionSort.java
+	- MergeSort.java
+	- QuickSort.java
+	- RadixSort.java
+	- SelectionSort.java
+	- Sorter.java
+	- TestSort.java
+	- Utility.java
+<h2>utils\</h2>
+	- FastScanner.java
