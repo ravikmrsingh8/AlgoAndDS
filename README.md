@@ -127,6 +127,11 @@
 |[SwapNode.java](src/com/example/ds/list/single/SwapNode.java)|[SwapTwoNodes.java](src/com/example/ds/list/single/SwapTwoNodes.java)|[UnionIntersectionInSortedList.java](src/com/example/ds/list/single/UnionIntersectionInSortedList.java)|[Utility.java](src/com/example/ds/list/single/Utility.java)|
 
 
+|ds  stack  problems : |
+|:--  |
+|[ReverseStackRec.java](src/com/example/ds/stack/problems/ReverseStackRec.java)|
+
+
 |ds  string : |  |
 |:--  |:--  |
 |[AllPermutation.java](src/com/example/ds/string/AllPermutation.java)|[AllPermutations.java](src/com/example/ds/string/AllPermutations.java)|
@@ -137,9 +142,9 @@
 |[AVL.java](src/com/example/ds/tree/avl/AVL.java)|[Node.java](src/com/example/ds/tree/avl/Node.java)|[TestAVL.java](src/com/example/ds/tree/avl/TestAVL.java)|[Utility.java](src/com/example/ds/tree/avl/Utility.java)|
 
 
-|ds  tree  bst : |
-|:--  |
-|[BST.java](src/com/example/ds/tree/bst/BST.java)|
+|ds  tree  bst : |  |  |
+|:--  |:--  |:--  |
+|[BST.java](src/com/example/ds/tree/bst/BST.java)|[FindPathInBST.java](src/com/example/ds/tree/bst/FindPathInBST.java)|[LCA.java](src/com/example/ds/tree/bst/LCA.java)|
 
 
 |ds  tree  node : |
@@ -151,12 +156,12 @@
 |:--  |:--  |:--  |:--  |
 |[AllAncestors.java](src/com/example/ds/tree/problems/AllAncestors.java)|[BinaryTreeToBST.java](src/com/example/ds/tree/problems/BinaryTreeToBST.java)|[BinaryTreeToDLL.java](src/com/example/ds/tree/problems/BinaryTreeToDLL.java)|[CheckForCousin.java](src/com/example/ds/tree/problems/CheckForCousin.java)|
 |[CheckIfSubtree.java](src/com/example/ds/tree/problems/CheckIfSubtree.java)|[CheckIfTreeIsBST.java](src/com/example/ds/tree/problems/CheckIfTreeIsBST.java)|[ChildrenSumProperty.java](src/com/example/ds/tree/problems/ChildrenSumProperty.java)|[CloneTree.java](src/com/example/ds/tree/problems/CloneTree.java)|
-|[ConnectNodes.java](src/com/example/ds/tree/problems/ConnectNodes.java)|[ConvertToSumTree.java](src/com/example/ds/tree/problems/ConvertToSumTree.java)|[ExtractLeafInDLL.java](src/com/example/ds/tree/problems/ExtractLeafInDLL.java)|[HeightOfATree.java](src/com/example/ds/tree/problems/HeightOfATree.java)|
-|[IdenticalTree.java](src/com/example/ds/tree/problems/IdenticalTree.java)|[KthAncestor.java](src/com/example/ds/tree/problems/KthAncestor.java)|[MaxSumPath.java](src/com/example/ds/tree/problems/MaxSumPath.java)|[MirrorTree.java](src/com/example/ds/tree/problems/MirrorTree.java)|
-|[NNode.java](src/com/example/ds/tree/problems/NNode.java)|[Node.java](src/com/example/ds/tree/problems/Node.java)|[NotHavingSibling.java](src/com/example/ds/tree/problems/NotHavingSibling.java)|[PathFromRootToLeaf.java](src/com/example/ds/tree/problems/PathFromRootToLeaf.java)|
-|[RNode.java](src/com/example/ds/tree/problems/RNode.java)|[SiblingNode.java](src/com/example/ds/tree/problems/SiblingNode.java)|[SortedArrayToBST.java](src/com/example/ds/tree/problems/SortedArrayToBST.java)|[SortedDLLToBST.java](src/com/example/ds/tree/problems/SortedDLLToBST.java)|
-|[SumTree.java](src/com/example/ds/tree/problems/SumTree.java)|[TreeSerialization.java](src/com/example/ds/tree/problems/TreeSerialization.java)|[TreeWithRandomPointers.java](src/com/example/ds/tree/problems/TreeWithRandomPointers.java)|[Utility.java](src/com/example/ds/tree/problems/Utility.java)|
-
+|[ConnectNodes.java](src/com/example/ds/tree/problems/ConnectNodes.java)|[ConvertToSumTree.java](src/com/example/ds/tree/problems/ConvertToSumTree.java)|[ExtractLeafInDLL.java](src/com/example/ds/tree/problems/ExtractLeafInDLL.java)|[FindDistanceBetweenNodes.java](src/com/example/ds/tree/problems/FindDistanceBetweenNodes.java)|
+|[FindPathInBinaryTree.java](src/com/example/ds/tree/problems/FindPathInBinaryTree.java)|[HeightOfATree.java](src/com/example/ds/tree/problems/HeightOfATree.java)|[IdenticalTree.java](src/com/example/ds/tree/problems/IdenticalTree.java)|[KthAncestor.java](src/com/example/ds/tree/problems/KthAncestor.java)|
+|[LCA.java](src/com/example/ds/tree/problems/LCA.java)|[MaxSumPath.java](src/com/example/ds/tree/problems/MaxSumPath.java)|[MirrorTree.java](src/com/example/ds/tree/problems/MirrorTree.java)|[NNode.java](src/com/example/ds/tree/problems/NNode.java)|
+|[Node.java](src/com/example/ds/tree/problems/Node.java)|[NotHavingSibling.java](src/com/example/ds/tree/problems/NotHavingSibling.java)|[PathFromRootToLeaf.java](src/com/example/ds/tree/problems/PathFromRootToLeaf.java)|[RNode.java](src/com/example/ds/tree/problems/RNode.java)|
+|[SiblingNode.java](src/com/example/ds/tree/problems/SiblingNode.java)|[SortedArrayToBST.java](src/com/example/ds/tree/problems/SortedArrayToBST.java)|[SortedDLLToBST.java](src/com/example/ds/tree/problems/SortedDLLToBST.java)|[SumTree.java](src/com/example/ds/tree/problems/SumTree.java)|
+|[TreeSerialization.java](src/com/example/ds/tree/problems/TreeSerialization.java)|[TreeWithRandomPointers.java](src/com/example/ds/tree/problems/TreeWithRandomPointers.java)|[Utility.java](src/com/example/ds/tree/problems/Utility.java)|  |
 
 |ds  tree  traversal : |  |  |  |
 |:--  |:--  |:--  |:--  |
