@@ -127,9 +127,9 @@
 |[SwapNode.java](src/com/example/ds/list/single/SwapNode.java)|[SwapTwoNodes.java](src/com/example/ds/list/single/SwapTwoNodes.java)|[UnionIntersectionInSortedList.java](src/com/example/ds/list/single/UnionIntersectionInSortedList.java)|[Utility.java](src/com/example/ds/list/single/Utility.java)|
 
 
-|ds  stack  problems : |
-|:--  |
-|[ReverseStackRec.java](src/com/example/ds/stack/problems/ReverseStackRec.java)|
+|ds  stack  problems : |  |
+|:--  |:--  |
+|[NextGreaterElement.java](src/com/example/ds/stack/problems/NextGreaterElement.java)|[ReverseStackRec.java](src/com/example/ds/stack/problems/ReverseStackRec.java)|
 
 
 |ds  string : |  |
