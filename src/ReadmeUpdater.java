@@ -49,16 +49,19 @@ public class ReadmeUpdater {
             String pathStr = p.toString();
             int index = pathStr.indexOf(_$ + "example" + _$) + 9;
 
-            String packages = pathStr.substring(index, pathStr.indexOf(fileName) - 1);
+            String[] packages = pathStr.substring(index, pathStr.indexOf(fileName) - 1).split("\\\\");
 
             categories.forEach(cat->{
-                if(packages.contains(cat.toLowerCase())) {
-                    List<String> jFiles = files.get(cat);
-                    if (jFiles == null) {
-                        jFiles = new ArrayList<>();
+                for(String module : packages){
+                    if(module.toLowerCase().trim().equals(cat.toLowerCase())){
+                        List<String> jFiles = files.get(cat);
+                        if (jFiles == null) {
+                            jFiles = new ArrayList<>();
+                        }
+                        jFiles.add(pathStr);
+                        files.put(cat, jFiles);
+                        break;
                     }
-                    jFiles.add(pathStr);
-                    files.put(cat, jFiles);
                 }
             });
         });
