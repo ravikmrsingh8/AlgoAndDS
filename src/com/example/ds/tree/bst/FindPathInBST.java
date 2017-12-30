@@ -9,8 +9,8 @@ package com.example.ds.tree.bst;
             55
 ===================================================================*/
 
-import com.example.ds.tree.problems.Node;
-import com.example.ds.tree.problems.Utility;
+import com.example.ds.tree.Node;
+import com.example.ds.tree.Utility;
 
 import java.util.LinkedList;
 import java.util.List;

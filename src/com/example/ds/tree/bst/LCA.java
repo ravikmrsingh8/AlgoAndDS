@@ -10,8 +10,8 @@ package com.example.ds.tree.bst;
 ===================================================================*/
 
 
-import com.example.ds.tree.problems.Node;
-import com.example.ds.tree.problems.Utility;
+import com.example.ds.tree.Node;
+import com.example.ds.tree.Utility;
 
 public class LCA {
     public static void main(String[] args) {
