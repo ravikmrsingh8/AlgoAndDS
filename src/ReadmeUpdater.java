@@ -20,32 +20,23 @@ public class ReadmeUpdater {
 
         files.forEach((cat, files) -> {
             StringBuilder sb = new StringBuilder();
-
-            int columns = files.size() < 4 ? files.size() : 4;
-            sb.append("\r\n|" + cat.replaceAll("\\\\", "  ") + " : |");
-            for (int i = 1; i < columns; i++) sb.append("  |");
             sb.append("\r\n|");
-            for (int i = 0; i < columns; i++) sb.append(":--  |");
-            sb.append("\r\n");
-
-            int i = 0;
-            while (i < files.size()) {
-                if (i % columns == 0) sb.append("|");
-                String filePath = (path + _$ + cat + _$ + files.get(i)).replaceAll("\\\\", "/");
-                sb.append("[" + files.get(i) + "](" + filePath + ")");
+            String[] heading = cat.replaceAll("\\\\", " ").split(" ");
+            for(String word : heading) {
+                word = Character.toUpperCase(word.charAt(0))  + word.substring(1,word.length());
+                sb.append(word).append(" ");
+            }
+            sb.append("| \r\n");
+            sb.append("|");
+            files.forEach(file->{
+                String filePath = path + _$ + cat + _$ + file.replaceAll("\\\\", "/");
+                sb.append("[" + file + "](" + filePath + ")");
                 sb.append("|");
-                i++;
-                if (i % columns == 0) sb.append("\r\n");
-            }
 
-            int cells = (int) Math.ceil(((double) files.size()) / columns)*columns;
-            while (i++ < cells) {
-                sb.append("  |");
-            }
-
+            });
             sb.append("\r\n");
-            System.out.println(sb);
             try {
+                System.out.println(sb.toString());
                 br.write(sb.toString());
             } catch (IOException e) {
                 e.printStackTrace();
