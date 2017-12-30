@@ -1,12 +1,15 @@
 package com.example.ds.list.doublelist;
 
 
-public class FNode {
-    public FNode right;
-    public FNode down;
+public class MNode {
     public int data;
-    public FNode(int data){
+    public MNode vert;
+    public MNode next;
+
+    public MNode(int data) {
         this.data = data;
+        vert = null;
+        next = null;
     }
 
     @Override

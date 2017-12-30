@@ -42,8 +42,8 @@ public class FlattenList {
     static FNode merge(FNode f1, FNode f2) {
         if(f1 == null) return f2;
         if(f2 == null) return f1;
-        FNode temp = new FNode(Integer.MAX_VALUE);
-        FNode newHead = temp;
+        FNode newHead = new FNode(Integer.MAX_VALUE);
+        FNode temp = newHead;
         while(f1 != null && f2 != null) {
             if(f1.data < f2.data) {
                 temp.down = f1;
