@@ -29,7 +29,7 @@ public class ReadmeUpdater {
             sb.append("| \r\n");
             sb.append("|");
             files.forEach(file->{
-                String filePath = path + _$ + cat + _$ + file.replaceAll("\\\\", "/");
+                String filePath = (path + _$ + cat + _$ + file).replaceAll("\\\\", "/");
                 sb.append("[" + file + "](" + filePath + ")");
                 sb.append("|");
 
