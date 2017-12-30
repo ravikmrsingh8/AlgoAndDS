@@ -20,7 +20,7 @@ public class ReadmeUpdater {
 
         files.forEach((cat, files) -> {
             StringBuilder sb = new StringBuilder();
-            sb.append("\r\n|");
+            sb.append("\r\n#### | ");
             String[] heading = cat.replaceAll("\\\\", " ").split(" ");
             for(String word : heading) {
                 word = Character.toUpperCase(word.charAt(0))  + word.substring(1,word.length());
