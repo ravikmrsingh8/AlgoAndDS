@@ -9,6 +9,11 @@
 |[MinimumStepToOne.java](src/com/example/dp/problems/MinimumStepToOne.java)|
 
 
+|ds  deque : |
+|:--  |
+|[SlidingWindow.java](src/com/example/ds/deque/SlidingWindow.java)|
+
+
 |ds  graph  disjointsets : |  |  |  |
 |:--  |:--  |:--  |:--  |
 |[DisjointSet.java](src/com/example/ds/graph/disjointsets/DisjointSet.java)|[DisjointSetTest.java](src/com/example/ds/graph/disjointsets/DisjointSetTest.java)|[SimpleDisjointSet.java](src/com/example/ds/graph/disjointsets/SimpleDisjointSet.java)|[TestSimpleDisjointSet.java](src/com/example/ds/graph/disjointsets/TestSimpleDisjointSet.java)|
@@ -116,16 +121,18 @@
 
 |ds  list  doublelist : |  |  |  |
 |:--  |:--  |:--  |:--  |
-|[DLL.java](src/com/example/ds/list/doublelist/DLL.java)|[DNode.java](src/com/example/ds/list/doublelist/DNode.java)|[FlattenList.java](src/com/example/ds/list/doublelist/FlattenList.java)|[FNode.java](src/com/example/ds/list/doublelist/FNode.java)|
-|[Utilty.java](src/com/example/ds/list/doublelist/Utilty.java)|  |  |  |
+|[CloneList.java](src/com/example/ds/list/doublelist/CloneList.java)|[DLL.java](src/com/example/ds/list/doublelist/DLL.java)|[DNode.java](src/com/example/ds/list/doublelist/DNode.java)|[FlattenList.java](src/com/example/ds/list/doublelist/FlattenList.java)|
+|[FlattenMultilevelList.java](src/com/example/ds/list/doublelist/FlattenMultilevelList.java)|[FNode.java](src/com/example/ds/list/doublelist/FNode.java)|[MNode.java](src/com/example/ds/list/doublelist/MNode.java)|[PointArbitPointerToNGE.java](src/com/example/ds/list/doublelist/PointArbitPointerToNGE.java)|
+|[PointArbitToMaxInRight.java](src/com/example/ds/list/doublelist/PointArbitToMaxInRight.java)|[RNode.java](src/com/example/ds/list/doublelist/RNode.java)|[Utilty.java](src/com/example/ds/list/doublelist/Utilty.java)|  |
 
 |ds  list  single : |  |  |  |
 |:--  |:--  |:--  |:--  |
-|[AlternateSplit.java](src/com/example/ds/list/single/AlternateSplit.java)|[DeleteAlternateNodes.java](src/com/example/ds/list/single/DeleteAlternateNodes.java)|[DeleteDuplicates.java](src/com/example/ds/list/single/DeleteDuplicates.java)|[DeleteDuplicatesSortedList.java](src/com/example/ds/list/single/DeleteDuplicatesSortedList.java)|
-|[DetectAndFixLoop.java](src/com/example/ds/list/single/DetectAndFixLoop.java)|[IntersectionPoint.java](src/com/example/ds/list/single/IntersectionPoint.java)|[List.java](src/com/example/ds/list/single/List.java)|[MergeSortedList.java](src/com/example/ds/list/single/MergeSortedList.java)|
-|[MiddleNode.java](src/com/example/ds/list/single/MiddleNode.java)|[Node.java](src/com/example/ds/list/single/Node.java)|[Palindrome.java](src/com/example/ds/list/single/Palindrome.java)|[ReverseList.java](src/com/example/ds/list/single/ReverseList.java)|
-|[SwapNode.java](src/com/example/ds/list/single/SwapNode.java)|[SwapTwoNodes.java](src/com/example/ds/list/single/SwapTwoNodes.java)|[UnionIntersectionInSortedList.java](src/com/example/ds/list/single/UnionIntersectionInSortedList.java)|[Utility.java](src/com/example/ds/list/single/Utility.java)|
-
+|[AddTwoNumbers.java](src/com/example/ds/list/single/AddTwoNumbers.java)|[AlternateSplit.java](src/com/example/ds/list/single/AlternateSplit.java)|[DeleteAlternateNodes.java](src/com/example/ds/list/single/DeleteAlternateNodes.java)|[DeleteDuplicates.java](src/com/example/ds/list/single/DeleteDuplicates.java)|
+|[DeleteDuplicatesSortedList.java](src/com/example/ds/list/single/DeleteDuplicatesSortedList.java)|[DetectAndFixLoop.java](src/com/example/ds/list/single/DetectAndFixLoop.java)|[IntersectionPoint.java](src/com/example/ds/list/single/IntersectionPoint.java)|[List.java](src/com/example/ds/list/single/List.java)|
+|[MergeSort.java](src/com/example/ds/list/single/MergeSort.java)|[MergeSortedList.java](src/com/example/ds/list/single/MergeSortedList.java)|[MiddleNode.java](src/com/example/ds/list/single/MiddleNode.java)|[Node.java](src/com/example/ds/list/single/Node.java)|
+|[Palindrome.java](src/com/example/ds/list/single/Palindrome.java)|[ReverseList.java](src/com/example/ds/list/single/ReverseList.java)|[ReverseNodesInGroup.java](src/com/example/ds/list/single/ReverseNodesInGroup.java)|[RotateByKNodes.java](src/com/example/ds/list/single/RotateByKNodes.java)|
+|[SegregateEvenOdd.java](src/com/example/ds/list/single/SegregateEvenOdd.java)|[SortListOf012.java](src/com/example/ds/list/single/SortListOf012.java)|[SwapNode.java](src/com/example/ds/list/single/SwapNode.java)|[SwapTwoNodes.java](src/com/example/ds/list/single/SwapTwoNodes.java)|
+|[UnionIntersectionInSortedList.java](src/com/example/ds/list/single/UnionIntersectionInSortedList.java)|[Utility.java](src/com/example/ds/list/single/Utility.java)|  |  |
 
 |ds  stack  problems : |  |
 |:--  |:--  |
@@ -172,6 +179,11 @@
 |:--  |:--  |:--  |:--  |
 |[Dictionary.java](src/com/example/ds/trie/Dictionary.java)|[DictionaryImpl.java](src/com/example/ds/trie/DictionaryImpl.java)|[DictionaryLoader.java](src/com/example/ds/trie/DictionaryLoader.java)|[Factory.java](src/com/example/ds/trie/Factory.java)|
 |[TestDictionary.java](src/com/example/ds/trie/TestDictionary.java)|[words.txt](src/com/example/ds/trie/words.txt)|  |  |
+
+|java  lambda : |  |
+|:--  |:--  |
+|[MethodReference.java](src/com/example/java/lambda/MethodReference.java)|[Player.java](src/com/example/java/lambda/Player.java)|
+
 
 |misc  app : |
 |:--  |
