@@ -18,7 +18,7 @@
 |[StackUsingQueue.java](src/com/example/ds/queue/StackUsingQueue.java)|
 
 #### Stack| 
-|[NextGreaterElement.java](src/com/example/ds/stack/NextGreaterElement.java)|[QueueUsingStack.java](src/com/example/ds/stack/QueueUsingStack.java)|[ReverseStackRec.java](src/com/example/ds/stack/ReverseStackRec.java)|
+|[NextGreaterElement.java](src/com/example/ds/stack/NextGreaterElement.java)|[PostfixEvaluation.java](src/com/example/ds/stack/PostfixEvaluation.java)|[QueueUsingStack.java](src/com/example/ds/stack/QueueUsingStack.java)|[ReverseStackRec.java](src/com/example/ds/stack/ReverseStackRec.java)|
 
 #### String| 
 |[AllPermutation.java](src/com/example/ds/string/AllPermutation.java)|[AllPermutations.java](src/com/example/ds/string/AllPermutations.java)|
