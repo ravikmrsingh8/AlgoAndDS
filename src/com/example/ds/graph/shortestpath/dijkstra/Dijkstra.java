@@ -38,7 +38,10 @@ public class Dijkstra {
                 u.getEdges().forEach((v, w) -> {
                     if (!visited[v]) {
                         Vertex dest = vertices.get(v);
-                        relax(u, dest, w);
+                        if (u.key + w < dest.key) {
+                            relax(u, dest, w);
+                            q.offer(dest)
+                        }
                     }
                 });
             }
@@ -46,9 +49,7 @@ public class Dijkstra {
     }
 
     private void relax(Vertex u, Vertex v, int w) {
-        if (u.key + w < v.key) {
             v.key = u.key + w;
             v.prev = u.id;
-        }
     }
 }
