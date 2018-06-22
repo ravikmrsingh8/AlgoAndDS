@@ -1,0 +1,1 @@
+java -cp C:\Java\AlgoAndDS\out\production\AlgoAndDS -Djava.rmi.server.codebase=file:/C:/Java/AlgoAndDS/out/production/AlgoAndDS/ -Djava.security.policy=server.policy com.example.java.rmi.server.Server

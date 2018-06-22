@@ -1,5 +1,7 @@
 package com.example.sort;
 
+import java.util.Arrays;
+
 public class BinarySearch {
     public static int search(int[] arr, int data) {
         return search(arr, data, 0, arr.length - 1);
@@ -29,6 +31,9 @@ public class BinarySearch {
         System.out.println(search(nums, 1));
         System.out.println(search(nums, -1));
         System.out.println(search(nums, 908080098));
+
+
+        System.out.println("Searching 7: " + Arrays.binarySearch(nums, 7));
     }
 
 }

@@ -39,17 +39,13 @@ public class Dijkstra {
                     if (!visited[v]) {
                         Vertex dest = vertices.get(v);
                         if (u.key + w < dest.key) {
-                            relax(u, dest, w);
-                            q.offer(dest)
+                            dest.key = u.key + w;
+                            dest.prev = u.id;
+                            q.offer(dest);
                         }
                     }
                 });
             }
         }
-    }
-
-    private void relax(Vertex u, Vertex v, int w) {
-            v.key = u.key + w;
-            v.prev = u.id;
     }
 }

@@ -1,0 +1,2 @@
+set arg=%1
+java -cp C:\Java\AlgoAndDS\out\production\AlgoAndDS -Djava.rmi.server.codebase=file:/C:/Java/AlgoAndDS/out/production/AlgoAndDS/  -Djava.security.policy=client.policy com.example.java.rmi.client.Client  %arg%
