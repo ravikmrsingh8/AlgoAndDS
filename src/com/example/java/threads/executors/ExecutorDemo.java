@@ -1,6 +1,5 @@
 package com.example.java.threads.executors;
 
-import java.sql.Time;
 import java.util.concurrent.*;
 import java.util.function.BiConsumer;
 

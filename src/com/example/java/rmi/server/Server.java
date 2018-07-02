@@ -10,7 +10,7 @@ public class Server extends UnicastRemoteObject implements RMIInterface {
     }
 
     @Override
-    public String sayHello(String name) throws RemoteException {
+    public String sayHello(String name) {
         System.out.println(name + " is trying to connect");
         return "Hello " + name;
     }

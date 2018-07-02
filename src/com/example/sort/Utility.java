@@ -31,9 +31,10 @@ public class Utility {
         System.out.println("Average Time "+ (T/N)+"ms");
 
     }
-    private static boolean testSort(int[] numbers){
+    public static boolean testSort(int[] numbers){
         for(int i=0;i<numbers.length-1;i++) {
             if(numbers[i]>numbers[i+1]){
+                System.out.println(numbers[i] + "," + numbers[i+1]);
                 return false;
             }
         }
