@@ -1,9 +1,5 @@
 package com.example.problems.numericalmethods;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.text.ParseException;
-
 /*===================================================
 Using Newton-Raphson Method
 X1 = X0 - f(X0)/f'(X0)

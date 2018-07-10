@@ -31,11 +31,22 @@ public class ExtractLeafInDLL {
         Utility.levelOrderLineByLine(root);
     }
 
+
+    private static Node root;
+
     private static Node extractLeafs(Node root) {
-        //TODO
+
+        // To ZDO
         return null;
+
     }
 
+    private static void extract(Node root,   Node head){
+        if(root==null) return;
+        extract(root.left, head);
+        extract(root.right, head);
+
+    }
     private static boolean isLeaf(Node node) {
         if(node == null) return false;
         return node.left == null && node.right == null;

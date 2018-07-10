@@ -3,26 +3,27 @@ package com.example.ds.graph.mst.prim;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Vertex {
-    public int idx;
-    public int prev;
-    public int key;
-    public Map<Integer, Integer> edges;
 
-    public Vertex(int idx) {
-        this.idx = idx;
-        this.prev = -1;
+public class Vertex {
+    int id;
+    int key;
+    int prev;
+    Map<Integer,Edge> edges= new HashMap<>();
+    public Vertex(int id) {
+        this.id = id;
         key = Integer.MAX_VALUE;
-        this.edges = new HashMap<>();
+        prev = -1;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("[V:"+idx).append(",").append("Prev:"+prev).append(",Cost:").append(key).append("]");
+        sb.append("[").append("Vertex"+id).append("]");
+        sb.append("[");
         edges.forEach((v,w)->{
-            sb.append("[").append(v).append(",").append(w).append("]");
+            sb.append("[D:").append(v).append(",W:").append(w.cost+"]");
         });
+        sb.append("]");
         return sb.toString();
     }
 }

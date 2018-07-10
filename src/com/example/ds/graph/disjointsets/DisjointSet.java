@@ -32,9 +32,14 @@ public class DisjointSet {
         int rootQ = find(q);
         if(rootP == rootQ) return;
 
-        if(rank[rootP] > rank[rootQ]) parent[rootQ] = rootP;
-        else if(rank[rootQ] > rank[rootP]) parent[rootP] = rootQ;
-        else {
+        if(rank[rootP] > rank[rootQ]) {
+            parent[rootQ] = rootP;
+            rank[rootP]++;
+        }
+        else if(rank[rootQ] > rank[rootP]){
+            parent[rootP] = rootQ;
+            rank[rootQ]++;
+        } else {
             rank[rootP]++;
             parent[rootQ] = rootP;
         }
@@ -45,8 +50,8 @@ public class DisjointSet {
     public int size(){
         return size;
     }
-    @Override
-    public String toString() {
+
+    public String description(){
         StringBuilder sb = new StringBuilder();
         Map<Integer, List<Integer>> map = new HashMap<>();
         for(int i=0; i<N ; i++) {
@@ -60,6 +65,14 @@ public class DisjointSet {
         map.forEach((root, list) ->{
             System.out.println(root+"->"+list);
         });
+        return sb.toString();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(Arrays.toString(parent)).append("\n");
+        sb.append(Arrays.toString(rank));
         return sb.toString();
     }
 }

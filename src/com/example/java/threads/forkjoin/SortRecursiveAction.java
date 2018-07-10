@@ -8,7 +8,7 @@ public class SortRecursiveAction extends RecursiveAction {
     private int[] arr;
     private int start;
     private int end;
-    private final static int THRESHOLD = 10000;
+    private final static int THRESHOLD = 1000000;
     public SortRecursiveAction(int[] arr, int start, int end){
         this.arr = arr;
         this.start = start;
