@@ -7,8 +7,9 @@ import java.util.List;
 
 public class SlidingWindow {
     public static void main(String[] args) {
-        slidingWindow(new int[]{5,6,1,7,2,3,4,5,1,3,1,2,3,7,6,5}, 4);
+        List<Integer> maxElements = slidingWindow(new int[]{5,6,1,7,2,3,4,5,1,3,1,2,3,7,6,5}, 4);
         //slidingWindow(new int[]{3, 2, 1, 1, 1, 5, 2, 3, 6}, 3);
+        System.out.println(maxElements);
     }
 
     static List<Integer> slidingWindow(int[] arr, int window) {
@@ -22,7 +23,7 @@ public class SlidingWindow {
         if(!q.isEmpty())maxElements.add(arr[q.peekFirst()]);
 
         for (int i = window; i < arr.length; i++) {
-            while(!q.isEmpty() && q.peekFirst()<= i-window) q.pollFirst();
+            if(!q.isEmpty() && q.peekFirst()<= i-window) q.pollFirst();
             while(!q.isEmpty() && arr[q.peekLast()] < arr[i]) q.pollLast();
             q.offerLast(i);
             maxElements.add(arr[q.peekFirst()]);
