@@ -1,6 +1,8 @@
 package com.example.ds.graph.shortestpath.dijkstra;
 
 
+import javafx.util.Pair;
+
 import java.util.*;
 
 /*========================================================================
@@ -27,21 +29,23 @@ public class Dijkstra {
         Map<Integer, Vertex> vertices = G.vertices();
         Vertex v0 = vertices.get(src);
         v0.key = 0;
-        Queue<Vertex> q = new PriorityQueue<>();
-        q.offer(v0);
+        Queue<Pair<Integer, Integer>> q = new PriorityQueue<>(16, Comparator.comparing(Pair::getValue));
+        q.offer(new Pair<>(0, 0));
+
         boolean[] visited = new boolean[G.N];
 
         while (!q.isEmpty()) {
-            Vertex u = q.poll();
-            if (!visited[u.id]) {
-                visited[u.id] = true;
-                u.getEdges().forEach((v, w) -> {
+            Pair<Integer, Integer> u = q.poll();
+
+            if (!visited[u.getKey()]) {
+                visited[u.getKey()] = true;
+                G.vertices.get(u.getKey()).getEdges().forEach((v, w) -> {
                     if (!visited[v]) {
                         Vertex dest = vertices.get(v);
-                        if (u.key + w < dest.key) {
-                            dest.key = u.key + w;
-                            dest.prev = u.id;
-                            q.offer(dest);
+                        if (u.getValue() + w < dest.key) {
+                            dest.key = u.getValue() + w;
+                            dest.prev = u.getKey();
+                            q.offer(new Pair<>(dest.id, dest.key));
                         }
                     }
                 });
