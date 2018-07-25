@@ -22,8 +22,8 @@ public class FlattenList {
         System.out.println("List");
         Utilty.printList(head);
         System.out.println("Flattening.....");
-        head = flatten(head);
-
+        //head = flatten(head);
+        head = flattenRec(head);
         System.out.println("List ");
         Utilty.printDown(head);
 
@@ -39,6 +39,13 @@ public class FlattenList {
         return head;
     }
 
+    static FNode flattenRec(FNode head) {
+        if(head == null) return null;
+        if(head.right == null) return head;
+        FNode newHead = merge(head, head.right);
+        newHead.right = head.right.right;
+        return flatten(newHead);
+    }
     static FNode merge(FNode f1, FNode f2) {
         if(f1 == null) return f2;
         if(f2 == null) return f1;
