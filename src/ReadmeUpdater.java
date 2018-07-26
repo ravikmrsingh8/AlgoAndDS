@@ -9,7 +9,7 @@ public class ReadmeUpdater {
     private static final Map<String, List<String>> files = new LinkedHashMap<>();
     private static final String path = "src" + _$ + "com" + _$ + "example";
     private static final Set<String> categories = new HashSet<>(Arrays.asList( new String[]{
-            "Bit", "DP", "Array", "List", "Graph", "Stack", "Queue", "Graph", "Tree", "Trie", "Map", "Java", "Design", "Heap", "String", "Deque" , "Sort", "Problems"
+            "Bit", "DP", "Array", "List", "Graph", "Stack", "Queue", "Tree", "Trie", "Map", "Set", "Java", "Design", "Heap", "String", "Deque" , "Sort", "Problems", "Misc"
     }));
     public static void main(String[] args) throws IOException {
         parseDirectories();
