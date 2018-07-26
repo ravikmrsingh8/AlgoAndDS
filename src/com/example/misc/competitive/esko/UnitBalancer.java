@@ -2,6 +2,16 @@ package com.example.misc.competitive.esko;
 
 import java.util.*;
 
+/**
+ * Input: N Units, N-1 Equations
+ * m,km,cm,mm
+ * m = 100 cm
+ * km = 1000 m
+ * m = 1000 mm
+ *
+ * OUTPUT:
+ * 1km = 1000m = 100000cm = 1000000mm
+ */
 public class UnitBalancer {
     public static void main(String[] args) {
 
