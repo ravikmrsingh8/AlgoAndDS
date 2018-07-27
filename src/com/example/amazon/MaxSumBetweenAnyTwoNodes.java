@@ -1,6 +1,6 @@
-package com.example.ds.tree.amazon;
+package com.example.amazon;
 
-public class MaxSumBetweenTwoLeaves {
+public class MaxSumBetweenAnyTwoNodes {
     public static void main(String[] args) {
         Node root = new Node(-15);
         root.left = new Node(5);

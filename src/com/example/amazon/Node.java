@@ -1,4 +1,4 @@
-package com.example.ds.tree.amazon;
+package com.example.amazon;
 
 public class Node {
     public int data;
