@@ -14,19 +14,29 @@ String
 2) Longest Common Prefix
 3) Longest Palindrome in a String
 4) Permutations of a given string
-5) Remove Duplicates in String inplace o(1) space O(n) time
+5) Recursively Remove Duplicates in a String 
 6) Form Palindrome by minimum insertion
 
 
 List
 1) Pairwise swap of a linked list
 2) Reverse a Linked List in groups of given size
-3) Check if Linked List is Palindrome
-4) Deletion in double linkedlist
+3) Check if Linked List is Palindrome o(1) space
+5) Add two numbers represented by linked lists
+
+
 
 Stack
 1) Next larger element
 2) Get minimum element from stack
+4) Stack using two queue
+
+Queue
+1)Circular tour
+2)Queue using two stack 
+
 
 Problem Solving
 1) Roman Number to Integer
+2) Integer to roman numeral
+
