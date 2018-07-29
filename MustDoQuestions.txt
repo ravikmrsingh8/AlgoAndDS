@@ -46,7 +46,24 @@ Tree
 2) Serialize or Deseriaize a tree
 3) find Max Sum in path  of a tree (not needed to be leaf to leaf); 
 4) Convert a sorted doubly linked list to a balanced tree
+5) Serialize and Deserialize a Binary Tree
+6) Check if a tree is symmetric
+7) Check if a tree in height balanced O(N);
+
+Heap 
+1) Find median in a stream of Integer
+2) Check if a tree is heap 
+
+Recursion
+1) Floodfill Algorithm
+2) Combinational Sum :- find all unique combinations in arr[] where the sum is equal to x. repeatation allowed
+3) Combinational Sum 2 :- find all unique combinations in arr[] where the sum is equal to x without repeatation
+4)
+
 Problem Solving
 1) Roman Number to Integer
 2) Integer to roman numeral
+
+
+
 
