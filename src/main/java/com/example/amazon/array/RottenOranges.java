@@ -8,10 +8,19 @@ public class RottenOranges {
         int grid[][] = {
                 {2, 1, 0, 2, 1},
                 {1, 0, 1, 2, 1},
+                {2, 0, 0, 2, 1}
+        };
+
+        System.out.println("Min Time :"+findMinTime(grid, 3, 5));
+
+        grid = new int[][] {
+                {2, 1, 0, 2, 1},
+                {1, 0, 1, 2, 1},
                 {1, 0, 0, 2, 1}
         };
 
-        System.out.println(findMinTime(grid, 3, 5));
+        System.out.println("Min Time :"+findMinTime(grid, 3, 5));
+
 
 
     }

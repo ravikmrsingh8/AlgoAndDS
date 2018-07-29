@@ -1,13 +1,17 @@
-23280666926826
 
 Array
 1) Maximum sum increasing subsequence
 2) Sort an array of 0s, 1s and 2s
 3) Kadane’s Algorithm
-4) Maximum of all subarrays of size k
+4) Maximum of all sub arrays of size k
 5) Pythagorean Triplet
 6) Spirally traversing a matrix
 7) Largest Number formed from an Array
+8) maximum length of subarray whose sum is 0
+9) Trapping water problem
+10)Stock buy and sell
+
+
 
 String
 1) Longest Common Substring
@@ -16,6 +20,7 @@ String
 4) Permutations of a given string
 5) Recursively Remove Duplicates in a String 
 6) Form Palindrome by minimum insertion
+
 
 
 List
@@ -36,6 +41,11 @@ Queue
 2)Queue using two stack 
 
 
+Tree
+1) Convert a Binary tree to  a doubly linked list 
+2) Serialize or Deseriaize a tree
+3) find Max Sum in path  of a tree (not needed to be leaf to leaf); 
+4) Convert a sorted doubly linked list to a balanced tree
 Problem Solving
 1) Roman Number to Integer
 2) Integer to roman numeral

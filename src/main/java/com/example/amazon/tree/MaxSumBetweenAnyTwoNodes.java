@@ -1,4 +1,4 @@
-package com.example.amazon;
+package com.example.amazon.tree;
 
 public class MaxSumBetweenAnyTwoNodes {
     public static void main(String[] args) {
