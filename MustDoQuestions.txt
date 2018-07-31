@@ -58,7 +58,15 @@ Recursion
 1) Floodfill Algorithm
 2) Combinational Sum :- find all unique combinations in arr[] where the sum is equal to x. repeatation allowed
 3) Combinational Sum 2 :- find all unique combinations in arr[] where the sum is equal to x without repeatation
-4)
+4) Water Overflow problem
+5) Josephus Problem
+
+Hashing
+1)Largest subarray with 0 sum
+2)Count distinct elements in every window
+3)Array Pair Sum Divisibility Problem
+4)Smallest window in a string containing all the characters of another string
+
 
 Problem Solving
 1) Roman Number to Integer
