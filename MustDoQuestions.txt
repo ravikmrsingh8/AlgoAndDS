@@ -1,15 +1,15 @@
 
 Array
-1) Maximum sum increasing subsequence
+1) Maximum sum increasing sub sequence
 2) Sort an array of 0s, 1s and 2s
-3) Kadane’s Algorithm
+*3) Kadane’s Algorithm
 4) Maximum of all sub arrays of size k
 5) Pythagorean Triplet
 6) Spirally traversing a matrix
 7) Largest Number formed from an Array
-8) maximum length of subarray whose sum is 0
-9) Trapping water problem
-10)Stock buy and sell
+8) maximum length of sub array whose sum is 0
+*9) Trapping water problem
+*10) Stock buy and sell
 
 
 
@@ -24,54 +24,66 @@ String
 
 
 List
-1) Pairwise swap of a linked list
-2) Reverse a Linked List in groups of given size
+*1) Pairwise swap of a linked list
+*2) Reverse a Linked List in groups of given size
 3) Check if Linked List is Palindrome o(1) space
 5) Add two numbers represented by linked lists
 
 
 
 Stack
-1) Next larger element
-2) Get minimum element from stack
+*1) Next larger element
+*2) Get minimum element from stack
 4) Stack using two queue
 
 Queue
-1)Circular tour
+*1)Circular tour
 2)Queue using two stack 
 
 
 Tree
-1) Convert a Binary tree to  a doubly linked list 
-2) Serialize or Deseriaize a tree
-3) find Max Sum in path  of a tree (not needed to be leaf to leaf); 
-4) Convert a sorted doubly linked list to a balanced tree
+*1) Convert a Binary tree to  a doubly linked list
+2) Serialize and De serialize a tree
+*3) find Max Sum in path  of a tree (not needed to be leaf to leaf);
+*4) Convert a sorted doubly linked list to a balanced tree
 5) Serialize and Deserialize a Binary Tree
 6) Check if a tree is symmetric
 7) Check if a tree in height balanced O(N);
 
 Heap 
-1) Find median in a stream of Integer
+*1) Find median in a stream of Integer
 2) Check if a tree is heap 
 
 Recursion
-1) Floodfill Algorithm
-2) Combinational Sum :- find all unique combinations in arr[] where the sum is equal to x. repeatation allowed
-3) Combinational Sum 2 :- find all unique combinations in arr[] where the sum is equal to x without repeatation
+1) Flood fill Algorithm
+*2) Combination Sum 1 :- find all unique combinations in arr[] where the sum is equal to x. repetition allowed
+*3) Combination Sum 2 :- find all unique combinations in arr[] where the sum is equal to x without repetition
 4) Water Overflow problem
 5) Josephus Problem
 
 Hashing
-1)Largest subarray with 0 sum
+1)Largest sub array with 0 sum
 2)Count distinct elements in every window
-3)Array Pair Sum Divisibility Problem
-4)Smallest window in a string containing all the characters of another string
+*3)Array Pair Sum Divisibility Problem
+*4)Smallest window in a string containing all the characters of another string
+
+
+Greedy
+1) Minimize the sum of product
+*2) Activity Selection
+
+Divide and Conquer
+1)Find the Maximum number, Array elements are first increasing then decreasing
+
+Dynamic Programming
+1) Longest Common Substring
+2) Edit distance
+3) Subset sum
+4) Set partitioning
+5) Rod Cutting
+6) Coin Change problem
 
 
 Problem Solving
 1) Roman Number to Integer
 2) Integer to roman numeral
-
-
-
-

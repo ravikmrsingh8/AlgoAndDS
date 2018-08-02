@@ -1,5 +1,24 @@
 package com.example.amazon.dp;
 
+/**
+ * Given weights and values of n items,
+ * put these items in a knapsack of capacity W to get the maximum total value in the knapsack.
+ *
+ * Optimal substructure
+ *  there can be two cases for every item:
+ *  (1) the item is included in the optimal subset,
+ *  (2) not included in the optimal set.
+ *
+ * Algorithm:-
+ * if (Number of items are 0 or W <= 0) return 0
+ * If  (weight of nth item is greater than W)
+ *     then the nth item cannot be included
+ * else the maximum value that can be obtained from n items is max of following two values.
+ *     1) Maximum value obtained by n-1 items and W weight (excluding nth item).
+ *     2) Value of nth item plus maximum value obtained by n-1 items and W minus weight of the nth item (including nth item).
+ *
+ *
+ */
 public class Knapsack01Rec {
     public static void main(String[] args) {
 
