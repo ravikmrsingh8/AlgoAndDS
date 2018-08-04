@@ -13,10 +13,12 @@ public class MaxCuts {
     static int recCalls=0;
     public static void main(String[] args) {
         System.out.println("Recursion");
+        evaluate(MaxCuts::maxCuts,new int[]{5,9,3},11);
         evaluate(MaxCuts::maxCuts,new int[]{5,2,3},400);
         evaluate(MaxCuts::maxCuts,new int[]{2,1,1},400);
 
         System.out.println("DP");
+        evaluate(MaxCuts::maxCutsDP,new int[]{5,9,3},11);
         evaluate(MaxCuts::maxCutsDP,new int[]{5,2,3},400);
         evaluate(MaxCuts::maxCutsDP,new int[]{2,1,1},400);
     }
@@ -31,7 +33,7 @@ public class MaxCuts {
     static int maxCuts(int rem, int[] cuts, int N, int cut){
         recCalls++;
         if(rem == 0) return Math.max(max, cut);
-        if( rem <0 || N == 0) return max;
+        if( rem <0 || N == 0) return 0;
 
         return Math.max(maxCuts(rem, cuts, N-1, cut),
                 maxCuts(rem-cuts[N-1], cuts, N, cut+1));
@@ -80,6 +82,7 @@ public class MaxCuts {
         long end = System.nanoTime();
         System.out.println("Recursive Calls "+recCalls);
         System.out.println("Total Time "+ (end-start)/Math.pow(10, 6)+ "ms");
+        System.out.println();
 
     }
 }

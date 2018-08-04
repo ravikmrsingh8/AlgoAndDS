@@ -8,12 +8,14 @@ public class Utility {
         int N = nTest;
         for(int test= 1; test<=nTest; test++) {
             int[] arr = getArray(arraySize);
+
             if(verbose){
                 System.out.print("Array:");printArray(arr);
             }
-            long t1 = System.currentTimeMillis();
+
+            long t1 = System.nanoTime()/1000;
             sorter.sort(arr);
-            long t2 = System.currentTimeMillis();
+            long t2 = System.nanoTime()/1000;
             System.out.println("Test:"+test);
             T += (t2-t1);
             boolean result = testSort(arr);
@@ -22,7 +24,7 @@ public class Utility {
                 printArray(arr);
                 break;
             } else {
-                System.out.println("PASS\tTime:"+(t2-t1)+"ms");
+                System.out.println("PASS\tTime:"+(t2-t1)/1000.0 +" ms");
             }
             if(verbose){
                 System.out.print("Sorted Array:");printArray(arr);

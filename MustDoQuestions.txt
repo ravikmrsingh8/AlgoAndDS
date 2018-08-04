@@ -82,7 +82,17 @@ Dynamic Programming
 4) Set partitioning
 5) Rod Cutting
 6) Coin Change problem
+7) Box Stacking
+8) Largest Rectangle of Maximum Area
+9) Largest Rectangle of 0 Area
 
+
+BackTracking
+1) N Queens
+2) Knights Tour
+3) Solve Sudoku
+4) Permutations of a string
+5) Rat in a maze
 
 Problem Solving
 1) Roman Number to Integer
