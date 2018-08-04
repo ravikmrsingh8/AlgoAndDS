@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 public class KnightTours {
     public static void main(String[] args) {
-        int N = 8;
+        int N = 6;
         if(knightTour(N)){
             printMoves();
         } else{
@@ -53,9 +53,10 @@ public class KnightTours {
                 if(tour(ni, nj, N, move+1)){
                     return true;
                 }
+                moves[ni][nj] = -1;
             }
         }
-        moves[i][j] = -1;
+
         return false;
     }
 }

@@ -47,10 +47,11 @@ public class Sudoku {
                 if(solveSudoku(puzzle, N)) {
                     return true;
                 }
+                puzzle[cell.i][cell.j] = UNASSIGNED;
             }
 
         }
-        puzzle[cell.i][cell.j] = UNASSIGNED;
+
         return false;
     }
     static boolean isSafe(int[][] sudoku, int N, int i, int j, int n){

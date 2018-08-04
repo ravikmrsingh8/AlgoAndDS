@@ -3,6 +3,15 @@ package com.example.backtracking;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ *
+ * TYhe N Queen is the problem of placing N chess queens on an N×N chessboard so that no two queens attack each other.
+ * For example, following is a solution for 4 Queen problem.
+ *   { 0,  1,  0,  0}
+ *   { 0,  0,  0,  1}
+ *   { 1,  0,  0,  0}
+ *   { 0,  0,  1,  0}
+ */
 public class NQueens {
     public static void main(String[] args) {
         int N = 4;
@@ -25,10 +34,9 @@ public class NQueens {
                 if(placeQueens(N, Q+1,positions)){
                     return true;
                 }
+                positions.pollLast();
             }
         }
-
-        positions.pollLast();
         return false;
     }
 
