@@ -1,4 +1,4 @@
-package com.example.baclktracking;
+package com.example.backtracking;
 
 import java.util.LinkedList;
 import java.util.List;
