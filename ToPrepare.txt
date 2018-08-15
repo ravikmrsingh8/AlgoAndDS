@@ -1,0 +1,35 @@
+SQL Queries
+Spring Framework
+Garbage Collector
+HIbernate core interfaces and working
+Http Packet format
+Solid Principles
+Design Patterns
+
+
+
+Graph Algorithms 
+1) Floyd Warshal
+2) Bellman Ford
+3) Dijkstra
+4) Prim 
+5) Kruskal
+6) Topological sort
+
+Misc
+1) Multithreading ad MultiProcessing MultiTaskng
+2) Green Threads and Kernel Level Threads
+3) Red Black Tree
+4) External Sorting
+5) sharding
+6) find cordinates of overlapped rectangle from two Rectangles 
+8) 
+
+Design
+1) Design Tic Tac Toe
+2) Design a search Engine
+
+
+List
+1) Delete N Nodes after M Nodes
+2)

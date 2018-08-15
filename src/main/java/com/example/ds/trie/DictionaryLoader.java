@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 
 public class DictionaryLoader {
     static void load(Dictionary dictionary) {
-        InputStream in = DictionaryLoader.class.getResourceAsStream("/com/example/ds/trie/words.txt");
+        InputStream in = DictionaryLoader.class.getClassLoader().getResourceAsStream("words.txt");
         try {
             load(in, dictionary);
         } catch (IOException e) {

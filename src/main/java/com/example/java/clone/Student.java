@@ -1,25 +1,30 @@
 package com.example.java.clone;
 
-public class Student implements Cloneable {
-    private String name;
-    private String sex;
-    private int age;
+public class Student extends Person  {
 
-    public Student(String name, String sex, int age) {
-        this.name = name;
-        this.sex = sex;
-        this.age = age;
+    private int studentId;
+    public Student(String name, String sex, int age,int id) {
+       super(name,sex,age);
+       this.studentId = id;
     }
 
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+    }
 
     /**
-     * clone method has protected access in java.lang.Object so to call it on Student Object from main we need to override it
+     * clone method has protected access in java.lang.Object so to call it on Student Object from main
+     * we need to create a separate method in student class
      * @return Object
      */
-    @Override
-    public Object clone(){
+
+    public Object getClone(){
         try {
-            return super.clone();
+            return clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
@@ -29,6 +34,6 @@ public class Student implements Cloneable {
 
     @Override
     public String toString() {
-        return "Student[" + "name=" + name + ", sex=" + sex + ", age=" + age + ']';
+        return "Student["+"id="+ getStudentId() + ", name=" + getName() + ", sex=" + getSex() + ", age=" + getAge() + ']';
     }
 }
