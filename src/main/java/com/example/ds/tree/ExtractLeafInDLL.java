@@ -10,6 +10,36 @@ package com.example.ds.tree;
     7
 ================================================= */
 public class ExtractLeafInDLL {
+    private  Node head;
+
+    private  Node extractLeafs(Node root) {
+        if(root == null) return null;
+        if(isLeaf(root)){
+            root.right = head;
+            if(head != null)head.left = root;
+            head = root;
+            return null;
+        }
+
+
+        root.right = extractLeafs(root.right);
+        root.left = extractLeafs(root.left);
+        return root;
+    }
+
+
+    private boolean isLeaf(Node node) {
+        if(node == null) return false;
+        return node.left == null && node.right == null;
+    }
+    private  void printList() {
+        Node itr = head;
+        while(itr != null) {
+            System.out.print(itr);
+            itr= itr.right;
+        }
+        System.out.println();
+    }
     public static void main(String[] args) {
         Node root = new Node(1);
         root.left = new Node(2);
@@ -20,43 +50,15 @@ public class ExtractLeafInDLL {
         System.out.println("Tree");
         Utility.levelOrderLineByLine(root);
         System.out.println();
-
+        ExtractLeafInDLL dll = new ExtractLeafInDLL();
         //Get all Leafs from tree into this list from left to right
-        Node head = extractLeafs(root);
+        dll.extractLeafs(root);
         System.out.println("List");
-        printList(head);
+        dll.printList();
 
         //Print Tree to make sure that leafs are gone
-        System.out.println("Tree");
+        System.out.println("\nTree");
         Utility.levelOrderLineByLine(root);
-    }
-
-
-    private static Node root;
-
-    private static Node extractLeafs(Node root) {
-
-        // To ZDO
-        return null;
-
-    }
-
-    private static void extract(Node root,   Node head){
-        if(root==null) return;
-        extract(root.left, head);
-        extract(root.right, head);
-
-    }
-    private static boolean isLeaf(Node node) {
-        if(node == null) return false;
-        return node.left == null && node.right == null;
-    }
-    private static void printList(Node head) {
-        while(head != null) {
-            System.out.print(head);
-            head = head.right;
-        }
-        System.out.println();
     }
 
 }

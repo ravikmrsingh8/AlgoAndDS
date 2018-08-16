@@ -1,11 +1,24 @@
 SQL Queries
+	sql Query to find Nth max salary
+
+
 Spring Framework
 Garbage Collector
 HIbernate core interfaces and working
 Http Packet format
-Solid Principles
-Design Patterns
 
+Solid Principles
+
+Design Patterns
+	Factory
+	AbstractFactory
+	Singleton
+	Adapter
+	Observer
+	State
+	Command
+	Proxy
+	
 
 
 Graph Algorithms 
@@ -16,20 +29,33 @@ Graph Algorithms
 5) Kruskal
 6) Topological sort
 
-Misc
+Problem Solving
 1) Multithreading ad MultiProcessing MultiTaskng
 2) Green Threads and Kernel Level Threads
 3) Red Black Tree
 4) External Sorting
 5) sharding
 6) find cordinates of overlapped rectangle from two Rectangles 
-8) 
-
+7) Next Higher Palindrome using same set of digits
+8) #Edit Distance 
 Design
 1) Design Tic Tac Toe
 2) Design a search Engine
+3) Desin an online book reading system
 
+DataStructure
+1) #Segment Tree
+2) #Trie and recommendation 
+
+Tree
+1) #Remove BST keys outside the given range
+2) Remove Path if they don't have thresold sum
 
 List
 1) Delete N Nodes after M Nodes
-2)
+2) #Reverse Node in group of K
+
+
+
+Matrix
+1) Rotate a NxN matrix by 90

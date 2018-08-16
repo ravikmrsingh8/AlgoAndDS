@@ -2,7 +2,7 @@ package com.example.ds.string;
 
 public class ReverseWords {
     public static void main(String[] args) {
-        String str = "blue is sky";
+        String str = " blue    is sky";
         String revWord = reverseWords(str);
         System.out.println(revWord);
     }
