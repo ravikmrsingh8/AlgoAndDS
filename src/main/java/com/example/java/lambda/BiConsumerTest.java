@@ -23,4 +23,6 @@ public class BiConsumerTest {
         System.out.println(test.map.get("*").apply(1,3));
     }
 
+
+
 }
